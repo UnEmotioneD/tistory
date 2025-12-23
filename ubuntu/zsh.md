@@ -12,17 +12,16 @@ sudo apt install zsh
 
 ## Change Shell
 
-- theme
-  - omz
-    - powerlevel10k
-
 ```bash
 chsh -s $(which zsh)
 ```
 
-- then restart
+- reboot
 
 ## Plugins
+
+- install oh-my-zsh
+- use powerlevel10k
 
 - autosuggestion
 - history-substring-search
@@ -30,5 +29,3 @@ chsh -s $(which zsh)
 
 - clone with git
 - source it from `~/.zshrc`
-
-## Configure

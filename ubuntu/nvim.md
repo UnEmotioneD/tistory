@@ -1,17 +1,24 @@
 # NeoVim
 
-## Necessary Packages
+## Packages
 
 - nerd fonts
 - node
 - cargo
+- xclip
 
 ---
 
-## Universal Clipboard
+## Copy & Paste
 
-- install `xclip`
+- yank
 
-```bash
-sudo apt install xclip
+```vim
+"+y " yank selected
+```
+
+- paste
+
+```vim
+"+p
 ```

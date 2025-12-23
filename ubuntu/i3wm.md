@@ -48,7 +48,6 @@ sudo apt install -y i3 i3status i3lock feh picom dmenu arendr
 
 ### Default Key
 
-- mod + enter: launch terminal
 - mod + r: resize
 - mod + s: stack mod
 - mod + v: next window will open in vertical position
@@ -65,7 +64,7 @@ sudo apt install -y i3 i3status i3lock feh picom dmenu arendr
 
 ---
 
-### Wallpaper
+## Wallpaper
 
 - Launch `feh` when logging in
 
@@ -77,21 +76,12 @@ exec_always -bg-scale {absolute path to the image}
 
 ## App Launcher
 
+- dmenu
+- rofi(better app launcher)
+
 ---
 
 ## Assign App to Workspace
-
-- Run the following cmd on terminal and click on the window to show class
-
-```bash
-xporp
-```
-
-- In i3 config
-
-```text
-assign [class = "{name of app's class}"] $workspace{desired workspace no.}
-```
 
 ---
 
