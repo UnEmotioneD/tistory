@@ -3,8 +3,8 @@
 ## Packages
 
 - nerd fonts
-- node
-- cargo
+- nodejs
+- npm
 - xclip
 
 ---

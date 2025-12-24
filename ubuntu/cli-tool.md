@@ -14,6 +14,7 @@
 - yazi
 - stow
 - lazygit
+- flameshot: screen shot program
 
 ---
 

@@ -18,7 +18,6 @@
 - `i3lock`: lock screen
 - `i3status`: statusbar
 - `picom`: compositer(fixes screen tearing)
-- `arendr`: gui settings app on top of xrender(cli settings app)
 
 ```bash
 sudo apt install -y i3 i3status i3lock feh picom dmenu arendr
@@ -66,10 +65,11 @@ sudo apt install -y i3 i3status i3lock feh picom dmenu arendr
 
 ## Wallpaper
 
-- Launch `feh` when logging in
+- Lauch `feh` on login
 
 ```text
-exec_always -bg-scale {absolute path to the image}
+exec_alwyas --no-startup-id ~/.fehbg
+exec_always feh --bg-scale {absolute path to the image}
 ```
 
 ---
