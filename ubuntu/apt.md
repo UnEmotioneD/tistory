@@ -77,9 +77,3 @@ sudo apt install --no-install-reco {pkg}
 ```bash
 sudo apt autoremove
 ```
-
-### Aliases
-
-```bash
-alias ai='sudo apt install -y -q'
-```

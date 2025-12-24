@@ -34,3 +34,8 @@ sudo apt install python3-pip ipykernel
 ### Finish
 
 - Now you can run python codes from `.ipynb` files
+
+## Tips
+
+`Ctrl + Enter`: Execute current cell and stay
+`Shift + Enter`: Execute Current cell and create same type of cell
