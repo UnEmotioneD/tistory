@@ -10,6 +10,7 @@
 - eza
 - fzf
 - bat
+- tmux
 - yazi
 - stow
 - lazygit
@@ -29,4 +30,10 @@ sudo apt install bat
 
 ```bash
 alias bat='batcat'
+```
+
+## Tmux Plugin Manager
+
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
