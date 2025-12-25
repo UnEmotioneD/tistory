@@ -108,10 +108,12 @@ To verify that GitHub recognizes your SSH key, run:
 ssh -T git@github.com
 ```
 
+Type `yes`
+
 You should see a message like:
 
-```plaintext
-Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+```text
+Hi {user name}! You've successfully ...
 ```
 
 If you see a permission error, ensure your SSH key is correctly added and try again.
