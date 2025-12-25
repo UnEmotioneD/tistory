@@ -22,12 +22,14 @@ sudo apt upgrade
 
 ## How To Use
 
+- you can pass more then one argument
+
 ```bash
 sudo apt install {pkg}
 ```
 
 ```bash
-sudo apt uninstall {pkg}
+sudo apt remove {pkg}
 ```
 
 ## Info
@@ -76,4 +78,5 @@ sudo apt install --no-install-reco {pkg}
 
 ```bash
 sudo apt autoremove
+sudo apt clean
 ```
