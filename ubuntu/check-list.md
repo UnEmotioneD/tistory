@@ -41,6 +41,12 @@
 sudo apt update && sudo apt upgrade -y
 ```
 
+- enable fire wall
+
+```bash
+sudo ufw enable
+```
+
 ### Install Recommended Packages
 
 - build-essential
