@@ -115,9 +115,8 @@ sudo dpkg -i {name of the .deb file}
 
 ```bash
 sudo apt install python3-pip
+pip3 install --user ipykernel
 ```
-
-<!-- TODO: how to install ipykernel -->
 
 ---
 
