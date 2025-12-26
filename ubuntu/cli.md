@@ -43,9 +43,42 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 ---
 
+## Yazi
+
+Must build from source
+
+Prerequit
+
+```bash
+sudo apt install ffmpeg 7zip jq poppler-utils fd-find ripgrep zoxide imagemagick
+```
+
+Setup cargo
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup update
+```
+
+Clone it to your disered directory from git and build it
+
+```bash
+git clone https://github.com/sxyazi/yazi.git
+cd yazi
+cargo build --release --locked
+```
+
+and add `yazi`, `ya` to `$PATH`
+
+```bash
+mv target/release/yazi target/release/ya /usr/local/bin/
+```
+
+---
+
 ## Fastfetch
 
-- install with `PPA`
+Install with `PPA`
 
 ```bash
 sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
@@ -59,7 +92,7 @@ now you can run `fastfetch` from terminal
 fastfetch
 ```
 
-- uninstall
+Uninstall
 
 ```bash
 sudo apt remove fastfetch
