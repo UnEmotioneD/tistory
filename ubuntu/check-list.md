@@ -121,3 +121,8 @@ pip3 install --user ipykernel
 ---
 
 ## Fix Bluetooth
+
+```bash
+sudo systemctl enable bluetooth  # turn bt
+sudo systemctl start bluetooth   # start bt on every login
+```
