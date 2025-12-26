@@ -6,9 +6,21 @@
 - nodejs
 - npm
 - yarn
+  - markdown-preview
+- python3-full
+  - clang-format
+  - pylint
+  - isort
+  - black
 
 ```bash
-sudo apt install nodejs npm yarn
+sudo apt install nodejs npm python3-full
+```
+
+For the markdown-preview install `yarn` with `npm`
+
+```bash
+sudo npm i -g yarn
 ```
 
 ---
