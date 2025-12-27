@@ -45,9 +45,11 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 ## Yazi
 
-Must build from source
+Build from source
 
-Prerequit
+- create local branch and remove commits to use the stable version
+
+prerequist
 
 ```bash
 sudo apt install ffmpeg 7zip jq poppler-utils fd-find ripgrep zoxide imagemagick
@@ -68,10 +70,18 @@ cd yazi
 cargo build --release --locked
 ```
 
-and add `yazi`, `ya` to `$PATH`
+and move `yazi`, `ya` files to `$PATH`
 
 ```bash
-mv target/release/yazi target/release/ya /usr/local/bin/
+sudo mv target/release/yazi target/release/ya /usr/local/bin/
+```
+
+- Uninstall
+
+remove the `yazi` and `ya` files under the `$PATH`
+
+```bash
+sudo rm /usr/local/bin/yazi /us/local/bin/ya
 ```
 
 ---
