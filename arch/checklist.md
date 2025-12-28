@@ -9,33 +9,33 @@
 - [x] Korean input and fonts
 
 - [x] kitty, tmux and nvim config via gnu stow
-- [ ] rice hyprpaper
-- [ ] rice hyprland
-- [ ] rice waybar
+- [x] rice hyprpaper
+- [x] rice hyprland
+- [x] rice waybar
 - [x] change key repeat and delay for keyboard
 - [x] change mouse sensitivity for each device
 - [ ] change kensington button input
 - [x] enable natural scroll
-- [ ] set display resolution and multiplier for 4K TV
-- [ ] sound setting (turn off beep when backspace meets dead end)
+- [x] set display resolution and multiplier for 4K TV
+- [x] sound setting (turn off beep when backspace meets dead end)
 - [x] brightness
-- [ ] battery, power management
+- [x] battery, power management
 - [x] clipboard(aur:wl-clipboard)
 
-- [ ] bat (code preview)
+- [x] bat (code preview)
 - [x] sessionizer (create tmux session)
 - [x] yazi (terminal file explorer)
 
-- [ ] fd
-- [ ] fzf
+- [x] fd
+- [x] fzf
 - [ ] delta
-- [ ] eza
-- [ ] zoxide
+- [x] eza
+- [x] zoxide
 
-- [ ] set up for java development
-- [ ] set up for python development
+- [x] set up for java development
+- [x] set up for python development
 - [ ] set up for database development
-- [ ] set up for react development
+- [x] set up for react development
 
 ---
 
