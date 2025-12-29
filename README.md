@@ -43,6 +43,8 @@ git merge --ff-only {branch-name}
 
 pull and push
 
+`-u`: upstream
+
 ```bash
 git pull
 git push -u origin main
