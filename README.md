@@ -35,7 +35,7 @@ git diff
 
 merge branch into current branch without creating new commit
 
-`--ff-only`: fast-foward-only
+`--ff-only`: fast-forward-only
 
 ```bash
 git merge --ff-only {branch-name}
