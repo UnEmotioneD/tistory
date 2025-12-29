@@ -5,7 +5,7 @@
 ## Install Required
 
 ```bash
-sudo apt install fcitx5 fcitx5-hangul fcitx5-configtool fcitx5-gtk fcitx5-qt
+sudo apt install fcitx5 fcitx5-hangul fcitx5-configtool
 ```
 
 - recommended
