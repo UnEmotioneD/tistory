@@ -1,4 +1,4 @@
-# NeoVim
+# Neovim
 
 ## Packages
 
