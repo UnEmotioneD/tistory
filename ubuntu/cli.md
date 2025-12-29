@@ -7,13 +7,12 @@
 - bat
 - curl
 - eza
-- flameshot: screen shot program
+- flameshot
 - git
 - stow
 - tmux
 - zoxide
 
-- fzf
 - yazi
 - lazygit
 - fastfetch
