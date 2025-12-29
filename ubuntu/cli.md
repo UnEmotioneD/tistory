@@ -4,18 +4,27 @@
 
 ## List of cli-tools
 
-- git
-- curl
-- zoxide
-- eza
-- fzf
 - bat
-- tmux
-- yazi
-- stow
-- lazygit
+- curl
+- eza
 - flameshot: screen shot program
+- git
+- stow
+- tmux
+- zoxide
+
+- fzf
+- yazi
+- lazygit
 - fastfetch
+
+---
+
+apt installable packages
+
+```bash
+sudo apt install bat curl eza flameshot git stow tmux zoxide
+```
 
 ---
 
