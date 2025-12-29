@@ -13,9 +13,11 @@
   - pylint
   - isort
   - black
+- openjdk-17-jdk
+  - nvim-java
 
 ```bash
-sudo apt install nodejs npm python3-full
+sudo apt install ripgrep nodejs npm python3-full openjdk-17-jdk
 ```
 
 For the markdown-preview install `yarn` with `npm`
@@ -38,9 +40,6 @@ sudo apt-get install ninja-build gettext cmake curl build-essential git
 
 ```bash
 git clone https://github.com/neovim/neovim
-```
-
-```bash
 cd neovim
 ```
 
@@ -48,13 +47,7 @@ cd neovim
 
 ```bash
 git checkout stable
-```
-
-```bash
 make CMAKE_BUILD_TYPE=RelWithDebInfo
-```
-
-```bash
 sudo make install
 ```
 
@@ -73,6 +66,8 @@ sudo make install
 ```
 
 ## Copy & Paste
+
+copy paste with no configs
 
 - yank
 
