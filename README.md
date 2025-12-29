@@ -15,6 +15,37 @@
 
 ## Git
 
+create new branch
+
+```bash
+git branch {new-branch-name}
+```
+
+checkout the branch
+
+```bash
+git checkout {branch-name}
+```
+
+show workingtree differences
+
+```bash
+git diff
+```
+
+merge branch into current branch
+
+```bash
+git merge {branch-name}
+```
+
+pull and push
+
+```bash
+git pull
+git push -u origin main
+```
+
 ### Reset Commit History
 
 orphan branch which has no history but have all the files
