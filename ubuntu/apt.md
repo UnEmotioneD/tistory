@@ -14,11 +14,25 @@
 sudo apt update
 ```
 
+- checkout outdated packages first
+
+```bash
+apt list --upgradeable
+```
+
 - Update outdated pkg
 
 ```bash
 sudo apt upgrade
 ```
+
+- Keep pkg from automatically updated
+
+```bash
+sudo apt-mark hold openjdk-17-jdk
+```
+
+- use `unhold` to undo it
 
 ## How To Use
 
