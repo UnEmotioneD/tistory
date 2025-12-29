@@ -55,6 +55,20 @@ deactivate
 
 - jupyter-core
 
+inside the python venv
+
 ```bash
-sudo apt install jupyter-core
+pip install jupyter
 ```
+
+launch jupyter notebook
+
+This will start server on localhost and web browser. Root directory will be set to where you ran the commands.
+
+```bash
+jupyter notebook
+```
+
+stop the server by pressing `Ctrl + c`
+
+closing the browser tab won't effect anything
