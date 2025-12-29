@@ -33,10 +33,12 @@ show workingtree differences
 git diff
 ```
 
-merge branch into current branch
+merge branch into current branch without creating new commit
+
+`--ff-only`: fast-foward-only
 
 ```bash
-git merge {branch-name}
+git merge --ff-only {branch-name}
 ```
 
 pull and push
