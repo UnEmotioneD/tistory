@@ -87,9 +87,17 @@ sudo apt install ibus-hangul
 - browser: super + b
 - search: alt + space
 
+- To disable
+  - hide window: super + h
+  - logout: super + l
+
 ---
 
 ## Download and Install
+
+- google chrome
+- visual studio code
+- slack
 
 - download files with .deb which is for debian/ubuntu
 
@@ -107,11 +115,9 @@ sudo dpkg -i {name of the .deb file}
 
 - you can pass multiple file names as arguments for dpkg command
 
-- google chrome
-
-- vscode
-
 - to run ipynb file from vscode install `pip3` and `ipykernel`
+  - `ipykernel`: to run from locally from vscode
+  - `jupyter`: to run from venv
 
 ```bash
 sudo apt install python3-pip python3-ipykernel

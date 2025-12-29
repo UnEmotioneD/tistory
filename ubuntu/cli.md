@@ -4,14 +4,14 @@
 
 ## List of cli-tools
 
-- bat
-- curl
-- eza
-- flameshot
 - git
+- curl
 - stow
 - tmux
+- bat
+- eza
 - zoxide
+- flameshot
 
 - yazi
 - lazygit
@@ -22,7 +22,7 @@
 apt installable packages
 
 ```bash
-sudo apt install bat curl eza flameshot git stow tmux zoxide
+sudo apt install git curl stow tmux bat eza zoxide flameshot
 ```
 
 ---
@@ -47,7 +47,7 @@ alias bat='batcat'
 
 - Terminal User Interface git application
 
-install curl frist
+install curl first
 
 ```bash
 sudo apt install curl
