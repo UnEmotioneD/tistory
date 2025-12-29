@@ -111,11 +111,10 @@ sudo dpkg -i {name of the .deb file}
 
 - vscode
 
-- to run ipynb file from vscode install `pip3` and `ipynb kernel`
+- to run ipynb file from vscode install `pip3` and `ipykernel`
 
 ```bash
-sudo apt install python3-pip
-pip3 install --user ipykernel
+sudo apt install python3-pip python3-ipykernel
 ```
 
 ---
