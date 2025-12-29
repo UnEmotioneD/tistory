@@ -7,14 +7,16 @@
 - git
 - curl
 - stow
-- tmux
-- bat
+- [tmux](#tmux)
+- [bat](#bat)
 - eza
 - zoxide
-- flameshot
-- yazi
-- lazygit
-- fastfetch
+- [flameshot](#flameshot)
+- [yazi](#yazi)
+- [lazygit](#lazygit)
+- [fastfetch](#fastfetch)
+- [github cli](#github-cli)
+  - [markdown preview](#markdown-preview)
 
 ---
 
@@ -45,6 +47,10 @@ stow bat theme from my dotfiles and build cache to make the theme work
 ```bash
 bat cache --build
 ```
+
+---
+
+## Flameshot
 
 ---
 
