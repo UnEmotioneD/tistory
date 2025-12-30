@@ -147,7 +147,7 @@ ros2 run demo_nodes_py listener
 Change domain
 
 ```bash
-export ROS_DOMAIN_DI=69
+export ROS_DOMAIN_ID=25
 ```
 
 Extra packages
@@ -193,3 +193,70 @@ colcon build
 - Build trouble shoot
   - check if jazzy is sourced
   - check where you ran commands
+
+### Connect with Pinky
+
+After `buzzer` from pinky
+
+Look for `pinky_xxxx` from wifi
+
+- pw: `pinkypro`
+
+Connect with `ssh`
+
+```bash
+ssh pinky@192.168.4.1
+```
+
+after `ssh` into pinky run following to connect to wifi
+
+- From now on your inside `ssh`
+
+```bash
+./wifi_setup.sh
+```
+
+`SSID`: is the name of the wifi
+pinky password: `1`
+
+ping it
+
+```bash
+ping 8.8.8.8
+```
+
+set `ROS_DOMAIN_ID` to be same as local machine
+
+```bash
+export ROS_DOMAIN_ID=25
+```
+
+Run `bring up` from pinky
+
+```bash
+ros2 launch pinky_bringup bringup_robot.launch.xml
+```
+
+keep this running and open new terminal session for your local machine
+
+### Pinky bring up trouble shooting
+
+motor is keep timing out
+
+also ping takes receives no packets back
+
+---
+
+From the local pc check connection
+
+- make sure you have sourced `jazzy`
+
+```bash
+ros2 topic list
+```
+
+Now you can control it
+
+```bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+```
