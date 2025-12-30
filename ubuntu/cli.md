@@ -53,6 +53,8 @@ bat cache --build
 
 ## Flameshot
 
+- [flameshot - command line option](https://flameshot.org/docs/advanced/commandline-options/)
+
 ---
 
 ## Lazygit
