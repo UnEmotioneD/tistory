@@ -14,7 +14,7 @@ sudo apt install fcitx5 fcitx5-hangul fcitx5-configtool
 sudo apt install fonts-noto-cjk
 ```
 
-- inside `~/.profile`
+- inside `.profile`(bash) or `.zprofile`(zsh)
 
 ```bash
 export XMODIFIERS=@im=fcitx
