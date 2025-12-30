@@ -69,7 +69,6 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 Used by `nvim` but sourced from `~/.zshrc`
 
 ```bash
-mkdir ~/repo && cd ~/repo
 git clone https://github.com/junegunn/fzf-git.sh.git
 ```
 
