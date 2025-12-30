@@ -15,6 +15,7 @@
 - [yazi](#yazi)
 - [lazygit](#lazygit)
 - [fastfetch](#fastfetch)
+- [speedtest-cli](#speedtest-cli)
 - [github cli](#github-cli)
   - [markdown preview](#markdown-preview)
 
@@ -151,6 +152,13 @@ Uninstall
 ```bash
 sudo apt remove fastfetch
 sudo add-apt-repository --remove ppa:zhangsongcui3371/fastfetch
+```
+
+## Speedtest-cli
+
+```bash
+sudo apt install speedtest-cli
+speedtest --secure
 ```
 
 ## GitHub CLI
