@@ -62,7 +62,8 @@ pip install jupyter
 
 launch jupyter notebook
 
-This will start server on localhost and web browser. Root directory will be set to where you ran the commands.
+This will start server on localhost and web browser.
+Root directory will be set to where you ran the commands.
 
 ```bash
 jupyter notebook
