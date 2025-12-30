@@ -219,7 +219,7 @@ after `ssh` into pinky run following to connect to wifi
 `SSID`: is the name of the wifi
 pinky password: `1`
 
-ping it
+ping google's public DNS
 
 ```bash
 ping 8.8.8.8
