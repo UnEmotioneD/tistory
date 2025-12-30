@@ -158,3 +158,38 @@ sudo apt install python3-colcon-common-extensions # to build pkg
 ```
 
 ---
+
+## Pinky Pro
+
+Make directory for pink_pro and clone pinky_pro repo
+
+```bash
+mkdir -p ~/pinky_pro/src
+cd ~/pinky_pro/src
+git clone https://github.com/pinklab-art/pinky_pro.git
+```
+
+Inside the `pinky_pro/src/` update `rosdep`
+
+```bash
+sudo rosdep init
+resdep update
+```
+
+Install dependencies from `~/pinky_pro/`
+
+```bash
+rosdep install --from-paths src --ignore-src -r -y
+```
+
+You should see `#All reqruied rosdeps installed successfully`
+
+now build it
+
+```bash
+colcon build
+```
+
+- Build trouble shoot
+  - check if jazzy is sourced
+  - check where you ran commands
