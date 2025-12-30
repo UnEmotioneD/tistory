@@ -30,6 +30,8 @@ sudo npm i -g yarn
 
 ## Build From Source
 
+If neovim is already installed with apt, remove before building it.
+
 - Prerequist packages
 
 ```bash
