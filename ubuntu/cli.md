@@ -184,6 +184,12 @@ run the following to use `gh` command
 gh auth login
 ```
 
+remove with apt
+
+```bash
+sudo apt remove gh
+```
+
 ### Markdown Preview
 
 - [yusukebe/gh-markdown-preview](https://github.com/yusukebe/gh-markdown-preview)
