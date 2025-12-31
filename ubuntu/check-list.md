@@ -41,10 +41,10 @@
 sudo apt update && sudo apt upgrade -y
 ```
 
-- enable fire wall
+- Later to connect to pinky do not enable fire wall
 
 ```bash
-sudo ufw enable
+sudo ufw dialbe
 ```
 
 ### Install Recommended Packages
