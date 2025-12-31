@@ -19,7 +19,7 @@ Inside the `pinky_pro/src/` update `rosdep`
 
 ```bash
 sudo rosdep init
-resdep update
+rosdep update
 ```
 
 Install dependencies from `~/pinky_pro/`
@@ -114,7 +114,7 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 After you sshed into pinky and after `wifi_setup.sh` do `bring up`
 
 ```bash
-ros2 launch pinky bringup_robot.launch.xml
+ros2 launch pinky_bringup bringup_robot.launch.xml
 ```
 
 And start `SLAM`
@@ -155,5 +155,5 @@ alias slam="ros2 launch pinky_navigation map_building.launch.xml"
 ```bash
 alias map="ros2 launch pinky_navigation map_view.launch.xml"
 alias teleop="ros2 run teleop_twist_keyboard teleop_twist_keyboard"
-alias savemap='ros2 run nav2_map_server map_saver_cli -f "{name of the map}"'
+alias savemap="ros2 run nav2_map_server map_saver_cli -f"
 ```
