@@ -146,7 +146,7 @@ ros2 run nav2_map_server map_saver_cli -f "{name of the map}"
 - `.bash_aliases` in pinky
 
 ```bash
-alias bringup="ros2 launch pinky bringup_robot.launch.xml"
+alias bringup="ros2 launch pinky_bringup bringup_robot.launch.xml"
 alias slam="ros2 launch pinky_navigation map_building.launch.xml"
 alias savemap="ros2 run nav2_map_server map_saver_cli -f"
 ```
@@ -154,6 +154,6 @@ alias savemap="ros2 run nav2_map_server map_saver_cli -f"
 - alias for local
 
 ```bash
-alias map="ros2 launch pinky_navigation map_view.launch.xml"
+alias riv="ros2 launch pinky_navigation map_view.launch.xml"
 alias teleop="ros2 run teleop_twist_keyboard teleop_twist_keyboard"
 ```
