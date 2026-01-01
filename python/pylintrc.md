@@ -1,6 +1,8 @@
 # Python Linter Remote Control
 
-## Suppress Unnecessary Warnings
+Pylint configuration
+
+## Suppress Warnings
 
 ```dosini
 [MESSAGES CONTROL]
@@ -9,10 +11,11 @@ disable =
     too-few-public-methods
 ```
 
-- `missing-docstring` includes
-  - `missing-module-docstring`
-  - `missing-class-docstring`
-  - `missing-function-docstring`
+`missing-docstring` includes
+
+- `missing-module-docstring`
+- `missing-class-docstring`
+- `missing-function-docstring`
 
 ---
 
