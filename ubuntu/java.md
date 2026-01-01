@@ -4,7 +4,7 @@ How to change `JDK` version
 
 ## Change Java
 
-To change Java version system wide
+To change Java version system wide:
 
 ```bash
 sudo update-alternatives --config java
