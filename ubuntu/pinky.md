@@ -48,15 +48,15 @@ Look for `pinky_xxxx` from wifi
 
 - pw: `pinkypro`
 
-Connect with `ssh`
+After that connect with `ssh`
 
 ```bash
 ssh pinky@192.168.4.1
 ```
 
-after `ssh` into pinky run following to connect to wifi
+After `ssh` into pinky run following to connect to wifi
 
-- From now on your inside `ssh`
+From now on your inside `ssh`
 
 ```bash
 ./wifi_setup.sh
@@ -97,7 +97,7 @@ also ping takes receives no packets back
 
 From the local pc check connection
 
-- make sure you have sourced `jazzy`
+Make sure you have sourced `jazzy`
 
 ```bash
 ros2 topic list
@@ -143,7 +143,7 @@ run from pinky:
 ros2 run nav2_map_server map_saver_cli -f "{name of the map}"
 ```
 
-- `.bash_aliases` in pinky
+Inside the `.bash_aliases` of `pinky`
 
 ```bash
 alias bringup="ros2 launch pinky_bringup bringup_robot.launch.xml"
@@ -151,9 +151,13 @@ alias slam="ros2 launch pinky_navigation map_building.launch.xml"
 alias savemap="ros2 run nav2_map_server map_saver_cli -f"
 ```
 
-- alias for local
+Set alias for local machine
 
 ```bash
 alias riv="ros2 launch pinky_navigation map_view.launch.xml"
 alias teleop="ros2 run teleop_twist_keyboard teleop_twist_keyboard"
 ```
+
+---
+
+### Happy Hacking 🎉

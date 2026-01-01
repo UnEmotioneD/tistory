@@ -1,6 +1,6 @@
 # Korean
 
-- How to setup korean(hangul) input on i3 with fcitx5
+How to setup korean(hangul) input on i3 with fcitx5
 
 ## Install Required
 
@@ -8,13 +8,13 @@
 sudo apt install fcitx5 fcitx5-hangul fcitx5-configtool
 ```
 
-- recommended
+Recommended fonts
 
 ```bash
 sudo apt install fonts-noto-cjk
 ```
 
-- inside `.profile`(bash) or `.zprofile`(zsh)
+Inside `.profile`(bash) or `.zprofile`(zsh)
 
 ```bash
 export XMODIFIERS=@im=fcitx
@@ -29,3 +29,7 @@ Launch `fcitx5-config-qt`
 
 Search `hangul` from right side of window and move it to left side.
 From `global option` tab use right alt to change input source.
+
+---
+
+### Happy Hacking 🎉

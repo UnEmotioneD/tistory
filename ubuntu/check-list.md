@@ -35,39 +35,39 @@
 
 ## Update
 
-- from gnome-terminal
+From `gnome-terminal`
 
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
 
-- Later to connect to pinky do not enable fire wall
+Do not enable `ufw` to connect to `pinky` later
 
 ```bash
-sudo ufw dialbe
+sudo ufw disable
 ```
 
 ### Install Recommended Packages
 
-- build-essential
 - git
 - curl
+- build-essential
 
 ```bash
-sudo apt install build-essential git curl
+sudo apt install git curl build-essential
 ```
 
 ---
 
 ## Korean Input
 
-- from terminal
+From `gnome-terminal`
 
 ```bash
 sudo apt install ibus-hangul
 ```
 
-- restart
+Reboot for the right option to show up
 
 - settings
   - keyboard
@@ -81,7 +81,7 @@ sudo apt install ibus-hangul
 
 ### Keyboard Shortcuts
 
-- in debian/ubuntu windows key is called super
+In debian/ubuntu windows key is called `super`
 
 - terminal: super + enter
 - browser: super + b
@@ -99,21 +99,21 @@ sudo apt install ibus-hangul
 - visual studio code
 - slack
 
-- download files with .deb which is for debian/ubuntu
+Download files with `.deb` which is for debian/ubuntu
 
-- move into downloads directory
+cd into downloads directory from terminal
 
 ```bash
 cd Downloads/
 ```
 
-- install with dpkg(debian package) command
+Install with dpkg(debian package) command
 
 ```bash
 sudo dpkg -i {name of the .deb file}
 ```
 
-- you can pass multiple file names as arguments for dpkg command
+You can pass multiple file names as arguments for `dpkg` command
 
 - to run ipynb file from vscode install `pip3` and `ipykernel`
   - `ipykernel`: to run from locally from vscode
@@ -128,6 +128,10 @@ sudo apt install python3-pip python3-ipykernel
 ## Fix Bluetooth
 
 ```bash
-sudo systemctl enable bluetooth  # turn bt
-sudo systemctl start bluetooth   # start bt on every login
+sudo systemctl enable bluetooth  # turn bt on
+sudo systemctl start bluetooth   # start bt every login
 ```
+
+---
+
+### Happy Hacking 🎉

@@ -82,3 +82,7 @@ Give execute permission
 ```bash
 sudo chmod +x 40_custom
 ```
+
+---
+
+### Happy Hacking 🎉

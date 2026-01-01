@@ -32,20 +32,20 @@ sudo npm i -g yarn
 
 If neovim is already installed with apt, remove before building it.
 
-- Prerequist packages
+Prerequist packages
 
 ```bash
 sudo apt-get install ninja-build gettext cmake curl build-essential git
 ```
 
-- Clone nvim repo
+Clone nvim repo
 
 ```bash
 git clone https://github.com/neovim/neovim
 cd neovim
 ```
 
-- Checkout stable branch for stable version
+Checkout stable branch for stable version
 
 ```bash
 git checkout stable
@@ -53,7 +53,7 @@ make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 ```
 
-- Gets installed to `/usr/local`
+Gets installed to `/usr/local`
 
 ---
 
@@ -69,16 +69,17 @@ sudo make install
 
 ## Copy & Paste
 
-copy paste with no configs
+Copy paste with no configs
 
-- yank
+- Yank
+- Paste
 
 ```vim
 "+y
-```
 
-- paste
-
-```vim
 "+p
 ```
+
+---
+
+### Happy Hacking 🎉

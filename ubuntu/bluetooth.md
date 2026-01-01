@@ -20,3 +20,7 @@ sudo apt install bluetooth bluez blueman
 ## Bluetooth Audio
 
 <!-- TODO: how to connect airpods -->
+
+---
+
+### Happy Hacking 🎉

@@ -1,10 +1,10 @@
 # Z-Shell
 
-- Larger ecosystem compare to BASH
+Larger ecosystem compare to BASH
 
 ## Prerequisite
 
-- install `git` and check
+Install `git` and check
 
 ```bash
 sudo apt install git
@@ -72,4 +72,8 @@ Used by `nvim` but sourced from `~/.zshrc`
 git clone https://github.com/junegunn/fzf-git.sh.git
 ```
 
-- source it from `~/.zshrc`
+Source it from `~/.zshrc`
+
+---
+
+### Happy Hacking 🎉

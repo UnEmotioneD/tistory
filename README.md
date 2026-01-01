@@ -87,3 +87,7 @@ force push to github
 ```bash
 git push -f origin main
 ```
+
+---
+
+### Happy Hacking 🎉

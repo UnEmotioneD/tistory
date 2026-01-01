@@ -53,15 +53,13 @@ deactivate
 
 ## Jupyter Notebooks
 
-- jupyter-core
-
-inside the python venv
+Inside the python venv install jupyter module
 
 ```bash
 pip install jupyter
 ```
 
-launch jupyter notebook
+Launch jupyter notebook
 
 This will start server on localhost and web browser.
 Root directory will be set to where you ran the commands.
@@ -70,13 +68,13 @@ Root directory will be set to where you ran the commands.
 jupyter notebook
 ```
 
-stop the server by pressing `Ctrl + c`
+Stop the server by pressing `Ctrl + c`
 
-closing the browser tab won't effect anything
+Closing the browser tab won't effect anything
 
 ## ROS2 Dev Env
 
-- use to connect to `Pinky` robot
+- Use to connect to `Pinky` robot
 
 - [ROS2 - Ubuntu](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html)
 
@@ -93,9 +91,7 @@ export LANG=en_US.UTF-8
 locale  # verify settings
 ```
 
-Enable reqruied repositories
-
-- `ubuntu universe repository`
+Enable `ubuntu universe` repository
 
 ```bash
 sudo apt install software-properties-common
@@ -123,20 +119,21 @@ Install ros2 desktop
 sudo apt install ros-jazzy-desktop
 ```
 
-set up your environment
+Add this to `.bashrc` to set up your environment
 
 ```bash
 . /opt/ros/jazzy/setup.sh
 ```
 
-setup alias
+Or with alias
 
 ```bash
 alias jazzy=". /opt/ros/jazzy/setup.zsh"
 ```
 
-- Open two separate terminal session source jazzy and run each commands to check
-  if it works
+Open two separate terminal session and run each commands to check if it works
+
+Source `jazzy` if `ros2` command is not working
 
 ```bash
 ros2 run demo_nodes_cpp talker
@@ -146,13 +143,13 @@ ros2 run demo_nodes_cpp talker
 ros2 run demo_nodes_py listener
 ```
 
-Change domain
+Set domain id to only talk with specific `talker`
 
 ```bash
 export ROS_DOMAIN_ID=25
 ```
 
-Extra packages
+Extra packages to install
 
 ```bash
 sudo apt install ros-dev-tools                    # needed for rosdep
@@ -166,3 +163,5 @@ For pink pro guide check out
 - [pinky.md](./pinky.md)
 
 ---
+
+### Happy Hacking 🎉

@@ -8,89 +8,86 @@
   - managing services
   - changing user
 
-- Update apt
+Update apt
 
 ```bash
 sudo apt update
 ```
 
-- checkout outdated packages first
+Checkout outdated packages first
 
 ```bash
 apt list --upgradeable
 ```
 
-- Update outdated pkg
+Update outdated pkg
 
 ```bash
 sudo apt upgrade
 ```
 
-- Keep pkg from automatically updated
+Keep pkg from automatically updated
 
 ```bash
 sudo apt-mark hold openjdk-17-jdk
 ```
 
-- use `unhold` to undo it
+Use `unhold` to undo mark
+
+---
 
 ## How To Use
 
-- you can pass more then one argument
+You can pass more then one argument
 
 ```bash
-sudo apt install {pkg}
+sudo apt install {pkg} {pkg} ...
 ```
 
-```bash
-sudo apt remove {pkg}
-```
+---
 
 ## Info
 
-- `Search`
+`Search` from `APT` repository
 
 ```bash
 apt search {pkg}
 ```
 
-- `list`
+`List` out installed packages
 
 ```bash
 apt list --installed
 ```
 
-- `show`: show pkg details
+Use `show` flag to show package details
 
-### Flags
+---
 
-- `--yes`: automatic yes
+## Flags
 
-```bash
-sudo apt install -y {name of package}
-```
+`--yes` or `-y`: automatic yes
 
-- `--quiet`: quieter output
+`--quiet` or `-q`: quieter output
 
-```bash
-sudo apt install -q {pkg}
-```
+`--no-install-recommends` or `--no-install-reco`
 
-- `--no-install-recommends`
+`--reinstall`
 
-```bash
-sudo apt install --no-install-reco {pkg}
-```
+`--purge`
 
-- `--reinstall`
-- `--purge`
+---
 
 ## Cleanup
 
 - `autoremove`: remove unused dependencies
-- `clean`: clear downloaded pkg cache
+- `clean`: clear download cache
 
 ```bash
 sudo apt autoremove
 sudo apt clean
 ```
+
+---
+
+### Happy Hacking 🎉
