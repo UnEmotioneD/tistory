@@ -1,9 +1,9 @@
 # Pinky
 
-- [build](#build)
-- [connect](#connect-with-pinky)
-  - [trouble shooting](#pinky-bring-up-trouble-shooting)
-- [map](#create-map)
+- [Build](#build)
+- [Connect](#connect-with-pinky)
+  - [Trouble Shoot](#pinky-bring-up-trouble-shooting)
+- [Map](#create-map)
 
 ## Build
 
@@ -83,15 +83,33 @@ Run `bring up` from pinky
 ros2 launch pinky_bringup bringup_robot.launch.xml
 ```
 
-keep this running and open new terminal session for your local machine
+Keep this running and open new terminal session for your local machine
 
 ---
 
-### Pinky bring up trouble shooting
+### Pinky Trouble Shooting
 
-motor is keep timing out
+#### Ping takes receives no packets back
 
-also ping takes receives no packets back
+Not a problem
+
+#### Motor Time Out
+
+Just restart
+
+#### `ros2 topic list` Not Showing Items Needed
+
+Check if `ubuntu fire wall` is enabled
+
+```bash
+sudo ufw status
+```
+
+Disable if enabled
+
+```bash
+sudo ufw disable
+```
 
 ---
 
@@ -137,7 +155,7 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 Save the created map
 
-run from pinky:
+Run from pinky:
 
 ```bash
 ros2 run nav2_map_server map_saver_cli -f "{name of the map}"
