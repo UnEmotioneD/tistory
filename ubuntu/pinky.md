@@ -1,9 +1,14 @@
 # Pinky
 
 - [Build](#build)
-- [Connect](#connect-with-pinky)
-  - [Trouble Shoot](#pinky-bring-up-trouble-shooting)
-- [Map](#create-map)
+- [Connect](#connect-to-pinky)
+  - [Trouble Shooting](#pinky-trouble-shooting)
+- [Create map](#create-map)
+  - [Aliases](#aliases)
+- [Run using saved map](#run-with-saved-map)
+- [Run using jupyter code](#run-using-jupyter-code)
+
+---
 
 ## Build
 
@@ -44,7 +49,7 @@ colcon build
   - check if jazzy is sourced
   - check where you ran commands
 
-## Connect with Pinky
+## Connect to Pinky
 
 After `buzzer` from pinky
 
@@ -89,9 +94,7 @@ ros2 launch pinky_bringup bringup_robot.launch.xml
 
 Keep this running and open new terminal session for your local machine
 
----
-
-From the local pc check connection
+From the `local` check connection
 
 Make sure you have sourced `jazzy`
 
@@ -133,31 +136,33 @@ sudo ufw disable
 
 ## Create Map
 
-`SSH` into pinky and do `bring up`
+1. `SSH` into pinky and do `bring up`
 
 ```bash
 ros2 launch pinky_bringup bringup_robot.launch.xml
 ```
 
-And start `SLAM`
+2. And start `SLAM`
 
 ```bash
 ros2 launch pinky_navigation map_building.launch.xml
 ```
 
-From local open `map` to see what pinky sees
+3. From local open `map` to see what pinky sees
 
 ```bash
 ros2 launch pinky_navigation map_view.launch.xml
 ```
 
-open another session for pinky control with your keyboard
+4. open another session for pinky control with your keyboard
 
 ```bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
-Save the created map
+Control pinky around the map nice and slowly for accurate mapping
+
+5. Save the created map
 
 Run from pinky:
 
@@ -167,6 +172,8 @@ Run from pinky:
 ```bash
 ros2 run nav2_map_server map_saver_cli -f "{name-of-map-file}"
 ```
+
+### Aliases
 
 Inside the `.bash_aliases` of `pinky`
 
@@ -182,6 +189,28 @@ Set alias inside local machine
 alias riv="ros2 launch pinky_navigation map_view.launch.xml"
 alias teleop="ros2 run teleop_twist_keyboard teleop_twist_keyboard"
 ```
+
+---
+
+## Run with Saved Map
+
+1. From `pink` do `bringup`
+
+2. Open saved map file:
+
+```bash
+ros2 launch pinky_navigation bringup_launch.xml map:={name-of-map-file}.xml
+```
+
+3. From `Local` launch `rviz`
+
+4. Click on `S2 Pose Estimate` from the menubar of rviz and set the location and direction pinky is facing
+
+5. Click on `Nav2 Goal` to set way points
+
+---
+
+## Run Using Jupyter Code
 
 ---
 
