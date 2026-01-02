@@ -1,5 +1,42 @@
 # Wezterm
 
+- configuration with `Lua`
+- supports image rendering in `yazi`
+
+How to install wezterm on Debian/Ubuntu Linux and configure
+
+---
+
+## Install
+
+- [Wezterm Install](https://wezterm.org/install/linux.html)
+
+```bash
+curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
+
+echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
+
+sudo chmod 644 /usr/share/keyrings/wezterm-fury.gpg
+```
+
+```bash
+sudo apt update
+```
+
+Install `wezterm` or `wezterm-nightly`
+
+```bash
+sudo apt install wezterm
+```
+
+---
+
+## Configuration
+
+Reference: [`Josean - Wezterm`](https://www.josean.com/posts/how-to-setup-wezterm-terminal)
+
+---
+
 ## Permission
 
 what is `chmod` with numbers
@@ -39,3 +76,7 @@ Do `ls -l` it will look like this:
 ```bash
 -rwx-rw-rw-
 ```
+
+---
+
+### Happy Hacking 🎉
