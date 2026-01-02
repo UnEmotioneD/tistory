@@ -1,12 +1,22 @@
 # Machine-Setup
 
-- Markdown files about how to setup my machines
+How to setup my machines
 
-- macOS
-- Arch Linux, Hyprland
-- Ubuntu, i3wm
+- Mac OS
+  - Aerospace
+
+- Arch Linux
+  - Hyprland
+
+- Ubuntu
+  - i3
+
+- Neovim
+- ZSH
 
 ---
+
+## TODOs
 
 - [ ] Create complete setup scripts
 - [ ] Upload on [Tistory](https://unemotioned.tistory.com/)
