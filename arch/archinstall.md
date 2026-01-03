@@ -305,16 +305,6 @@ check connection
 nmcli connection show
 ```
 
-## For KDE Plasma
-
-open console
-
-fix the Discover program's backend
-
-```sh
-sudo pacman -Sy flatpak
-```
-
 ## Windows entry to grub menu
 
 noticed that there was no option to boot into Windows in GRUB menu
