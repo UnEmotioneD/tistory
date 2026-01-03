@@ -20,7 +20,6 @@ use `archinstall` script
   - [Format Partitions](#format-partitions)
   - [Mount Partitions](#mount-partitions)
   - [start install](#start-install)
-    - [trouble-shoot](#trouble-shooting)
 - [Grub](#grub)
 - [Login to Hyprland](#login-to-hyprland)
 - [Wi-Fi with nmcli](#wi-fi-with-nmcli)
@@ -237,16 +236,6 @@ brightnessctl git stow neovim hyprpaper waybar ttf-meslo-nerd otf-font-awesome
 - Timezon: `Asia/Seoul`
 
 leave other options as is then select `Install`
-
----
-
-#### Trouble Shooting
-
-`Module Not Found Error` after `archinstall` command: Install missing modules
-
-```sh
-pacman -Sy python python-pyparted python-simple-term-menu python-annotated-types python-pydantic python-pydantic-core python-typing_extensions archinstall
-```
 
 ---
 
