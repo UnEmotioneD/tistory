@@ -60,4 +60,8 @@ brillo -q -u 1000 -A 5
 
 do the same to brightness down
 
-#### Reboot the PC for this to take effect
+Reboot the PC for this to take effect
+
+---
+
+#### Happy Hacking 🎉
