@@ -350,30 +350,6 @@ reboot now
 
 now you can choose to boot into Windows
 
-### GRUB Menu Resolution
-
-from grub menu press c to go into terminal
-
-```sh
-vidieo info
-```
-
-from the supported resolutions select one
-
-- lower resolution have lower input delay and bigger texts
-
-back into the grub config file `/etc/default/grub`
-
-- from auto to desired option
-
-```console
-GRUB_FGXMODE=640x480
-```
-
-recreate the grub config
-
----
-
 ## Delete Arch
 
 You can't remove EFI partition from `Disk Management`

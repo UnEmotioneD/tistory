@@ -1,10 +1,12 @@
 # Grub
 
+Customize grub menu to have bigger text and just the items you need
+
 ## Remove Unnecessary Items
 
 Location of grub menu entries: `/etc/grub.d/`
 
-```bash
+```sh
 cd /etc/grub.d
 ls -l # or ll
 ```
@@ -22,7 +24,7 @@ Output is something like this
 
 Remove execute permission from scripts to hide
 
-```bash
+```sh
 sudo chmod -x {name of script}
 ```
 
@@ -30,7 +32,7 @@ sudo chmod -x {name of script}
 
 Change index from `30_` to `09_` to put it above `10_linux`
 
-```bash
+```sh
 sudo mv 30_os-prober 09_os-prober
 ```
 
@@ -38,7 +40,7 @@ sudo mv 30_os-prober 09_os-prober
 
 Grub config file: `/etc/default/grub`
 
-```bash
+```sh
 cd /etc/default/
 sudo nvim grub
 ```
@@ -65,24 +67,54 @@ GRUB_TIMEOUT=10
 
 Save and run
 
-```bash
+```sh
 sudo update-grub
-```
-
-## Change Items Name
-
-<!-- TODO: how to change grub menu item name -->
-
-From `/etc/grub.d/`
-
-Edit `40_custom`
-
-Give execute permission
-
-```bash
-sudo chmod +x 40_custom
 ```
 
 ---
 
-### Happy Hacking 🎉
+### GRUB Menu Resolution
+
+from grub menu press c to go into terminal
+
+- Newer BIOS
+
+```sh
+vidieoinfo
+```
+
+- Older BIOS
+
+```sh
+vbinfo
+```
+
+from the supported resolutions select one
+
+- lower resolution have lower input delay and bigger texts
+
+back into the grub config file `/etc/default/grub`
+
+- from auto to desired option
+
+```console
+GRUB_FGXMODE=640x480
+```
+
+recreate the grub config
+
+- Arch / Fedora
+
+```sh
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+- Debian/Ubuntu/Mint
+
+```sh
+sudo update-grub
+```
+
+---
+
+#### Happy Hacking 🎉
