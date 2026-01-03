@@ -35,3 +35,7 @@ sudo pacman-key --populate
 ```sh
 sudo pacman -Syyu
 ```
+
+---
+
+### Happy Hacking 🎉
