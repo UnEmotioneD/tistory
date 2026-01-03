@@ -89,3 +89,7 @@ Now you're done
 - To update it you have to pull it from source
 
 - You can get notifications from arch wiki
+
+---
+
+### Happy Hacking 🎉
