@@ -23,7 +23,7 @@ use `archinstall` script
     - [trouble-shoot](#trouble-shooting)
 - [Grub](#grub)
 - [Login to Hyprland](#login-to-hyprland)
-- [Connect to Wi-Fi](#connect-to-wi-fi)
+- [Wi-Fi with nmcli](#wi-fi-with-nmcli)
 - [Add Windows to GRUB](#windows-entry-to-grub-menu)
 - [Delete Arch](#delete-arch)
   - [Clean Install USB](#clean-install-usb)
@@ -66,7 +66,7 @@ Set right font size for the display
 setfont ter-132n
 ```
 
-### Connect to Wi-Fi
+### Wi-Fi with iwctl
 
 enter `iwd` mode
 
@@ -217,7 +217,7 @@ use `arrow keys` or `hjkl` to navigate
 
 - set the root password
 
-- User Account &rarr; Add a user and set it up as superuser(sudo) then Confirm and exit
+- User Account &rarr; Add a user and set it up as superuser then Confirm and exit
 
 - Profile &rarr; Type &rarr; Desktop
   select `Hyprland`
@@ -228,7 +228,11 @@ then select Graphics driver
 
 - Network configuration: `Use NetworkManager`
 
-- Additional packages: `brightnessctl git stow neovim hyprpaper waybar ttf-meslo-nerd otf-font-awesome`
+- Additional packages:
+
+```sh
+brightnessctl git stow neovim hyprpaper waybar ttf-meslo-nerd otf-font-awesome
+```
 
 - Timezon: `Asia/Seoul`
 
@@ -286,7 +290,7 @@ From the login window change the sessin from `Hyprland(uwsm-managed)` which is
 selected by default to just
 `Hyprland`
 
-### Connect to Wi-Fi
+### Wi-Fi with nmcli
 
 Install `networkmanager`
 
