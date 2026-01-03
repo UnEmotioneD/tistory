@@ -1,44 +1,54 @@
-# Remap keys with xremap
+# Xremap
 
-## Install xremap for hyprland with cargo
+## Xremap for Hyprland
+
+Install with `cargo`
 
 ```sh
 cargo install xremap --features hypr
 ```
 
-- mtow xremap config from dotfiles directory
+Stow xremap config from dotfiles
 
-## xremap without sudo
+---
 
-- create `udev` rule
+## Xremap Without Sudo
+
+Create `udev` rule
 
 ```sh
 echo 'KERNEL=="uinput", GROUP="uinput", MODE="0660", OPTIONS+="static_node=uinput"' | sudo tee /etc/udev/rules.d/99-uinput.rules
 ```
 
-- add user to `input` and `uinput` group
+Add user to `input` and `uinput` group
 
 ```sh
-sudo groupadd uinput
+sudo groupadd -f uinput
 sudo usermod -aG uinput,input $USER
 ```
 
-- and reload the `udev` rules
+Reload `udev` rules
 
 ```sh
 sudo udevadm control --reload-rules && sudo udevadm trigger
 ```
 
-- load `uinput` at boot
+Load `uinput` at boot
 
 ```sh
 echo "uinput" | sudo tee /etc/modules-load.d/uinput.conf
 ```
 
-## Add to hyprland.conf
+---
 
-- start xremap with config on startup with `exec`
+## Launch On Login
+
+Start `xremap` with it's config
 
 ```sh
-exec = xremap ~/.config/xremap/config.yml
+exec-once = xremap ~/.config/xremap/config.yml
 ```
+
+---
+
+### Happy Hacking 🎉
