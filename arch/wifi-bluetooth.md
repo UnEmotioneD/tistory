@@ -111,3 +111,7 @@ sudo nvim /etc/bluetooth/main.conf
 ```
 
 Uncomment the `AutoEnable = true`
+
+---
+
+### Happy Hacking 🎉

@@ -79,3 +79,7 @@ fcitx5-diagnose
 ```
 
 If everything is set up correctly, you should be able to type in Korean by pressing the **Right Alt** key to switch input methods.
+
+---
+
+### Happy Hacking 🎉

@@ -23,3 +23,7 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation
 이 경로 안에서 우클릭 > 새로만들기 > `dword32비트` 선택 그리고 `RealTimeIsUniversal`이라고 이름 지정
 
 편집하기 위해 엔터 한번 더 누른후 값을 `1`로 변경
+
+---
+
+### Happy Hacking 🎉

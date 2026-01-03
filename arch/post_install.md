@@ -133,3 +133,7 @@ Too see the system resources run this cmd
 ```sh
 sudo auto-cpufreq --stats
 ```
+
+---
+
+### Happy Hacking 🎉

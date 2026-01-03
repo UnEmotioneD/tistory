@@ -29,3 +29,7 @@ confirm changes
 ```bash
 java --version
 ```
+
+---
+
+## Happy Hacking 🎉

@@ -68,3 +68,7 @@ hyprctl reload
 ## hyprlock
 
 - [hyprwm/hyprlock github](https://github.com/hyprwm/hyprlock)
+
+---
+
+### Happy Hacking 🎉

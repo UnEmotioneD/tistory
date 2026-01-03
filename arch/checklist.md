@@ -185,3 +185,7 @@ ttf-d2coding
 adobe-source-han-sans-kr-fonts
 adobe-source-han-serif-kr-fonts
 ttf-nanum (from AUR w/ yay)
+
+---
+
+#### Happy Hacking 🎉
