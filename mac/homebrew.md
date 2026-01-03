@@ -2,6 +2,12 @@
 
 - macOS package manager
 
+## List of Content
+
+- [Install Homebrew](#install-homebrew)
+- [Use Homebrew](#use-homebrew)
+  - [Pin Package Version](#pin-package-version)
+
 ## Install Homebrew
 
 execute following command in terminal
@@ -12,14 +18,14 @@ execute following command in terminal
 
 add homebrew to path (change the user name to yours)
 
-- for apple silicon mac
+- for apple silicon mac:
 
 ```bash
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/unemotioned/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
-- intell cpu mac
+- intell cpu mac:
 
 ```bash
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/unemotioned/.zprofile

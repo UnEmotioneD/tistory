@@ -7,7 +7,7 @@ Karabiner Complex Rules
 ## Table of Contents
 
 - [Caps Lock](#caps-lock)
-- [esc to Caps](#esc-to-caps)
+- [ESC to Caps](#esc-to-caps)
 - [Right Command](#right-command)
 - [Media Control](#media-control)
 
