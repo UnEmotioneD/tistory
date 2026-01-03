@@ -14,27 +14,33 @@ use `archinstall` script
 ## List of contents
 
 - [Before Install](#before-install)
-- [Synchronize pacman to DB](#synchronize-package-to-databases)
-- [Partitioning](#partitioning)
-- [Format Partitions](#format-partitions)
-- [Mount Partitions](#mount-the-partitions)
-- [start install](#start-install)
-  - [trouble-shoot](#trouble-shooting)
+- [Inside Install Drive](#inside-install-drive)
+  - [Synchronize to DB](#synchronize-to-databases)
+  - [Partition](#partition)
+  - [Format Partitions](#format-partitions)
+  - [Mount Partitions](#mount-partitions)
+  - [start install](#start-install)
+    - [trouble-shoot](#trouble-shooting)
 - [Grub](#grub)
+- [Login to Hyprland](#login-to-hyprland)
 - [Connect to Wi-Fi](#connect-to-wi-fi)
-- [Fix flatpak](#for-kde-plasma)
 - [Add Windows to GRUB](#windows-entry-to-grub-menu)
-- [Delete ArchLinux](#delete-arch-linux)
+- [Delete Arch](#delete-arch)
+  - [Clean Install USB](#clean-install-usb)
 
 ---
 
 ## Before Install
 
+### Create Disk Space
+
 Use windows `disk mamanger` create at least 40GB of free space
 
-BIOS mode: on thinkpad press enter and f1
+### Enter BIOS
 
-```bash
+Thinkpad: press `Ender` from boot screen and `F1`
+
+```sh
 Security > Secure Boot
 ```
 
@@ -46,9 +52,13 @@ Save and restart: `F10`
 
 Press enter again then `F12` select the drive with arch iso
 
-Select the very first item
+Select first item
 
-## Inside Terminal
+---
+
+## Inside Install Drive
+
+### Set Font for Terminal
 
 Set right font size for the display
 
@@ -56,7 +66,7 @@ Set right font size for the display
 setfont ter-132n
 ```
 
-## Connect to Wi-Fi
+### Connect to Wi-Fi
 
 enter `iwd` mode
 
@@ -88,21 +98,19 @@ enter password and exit `iwd` mode
 exit
 ```
 
-check the Wi-Fi connection with `ping` command
+check the Wi-Fi with `ping`
 
 ```sh
 ping google.com
 ```
 
-`ctrl + c` to stop ping
+Stop pining with `Ctrl + C`
 
-clean the terminal with `clear` command
+Clear terminal window with `clear` command
 
-```sh
-clear
-```
+---
 
-## Synchronize package to databases
+### Synchronize to databases
 
 update pacman
 
@@ -118,7 +126,7 @@ pacman -S archlinux-keyring archinstall
 
 To proceed type `Y` or just press `enter`
 
-## Partitioning
+### Partition
 
 ```sh
 lsblk
@@ -146,25 +154,25 @@ cfdisk /dev/nvme0n1
 
 4. Finally select `Write` type `yes`
 
-## Format partitions
+### Format partitions
 
-check the newly created partitions with `lsblk` command
+Check created partitions with `lsblk`
 
-format the `EFI` first
+`EFI` partition to `fat`
 
 ```sh
 mkfs.fat -F32 /dev/nvme0n1p5
 ```
 
-then format the root partition
+`Root` partition to `ext4`
 
 ```sh
 mkfs.ext4 /dev/nvme0n1p6
 ```
 
-## Mount the partitions
+### Mount partitions
 
-mount the `root` partition to `/mnt`
+mount `root` partition to `/mnt`
 
 ```sh
 mount /dev/nvme0n1p6 /mnt
@@ -182,30 +190,20 @@ and mount it
 mount /dev/nvme0n1p5 /mnt/boot
 ```
 
-confirm mount with `lsblk`
+`lsblk` to confirm mount
 
 | NAME      | MOUNTPOINTS |
 | --------- | ----------- |
 | nvme0n1p5 | /mnt/boot   |
 | nvme0n1p6 | /mnt        |
 
-## Start Install
+### Start Install
 
 execute the `archinstall` script
 
 ```sh
 archinstall
 ```
-
-### Trouble Shooting
-
-`Module Not Found Error` after `archinstall` command: Install missing modules
-
-```sh
-pacman -Sy python python-pyparted python-simple-term-menu python-annotated-types python-pydantic python-pydantic-core python-typing_extensions archinstall
-```
-
----
 
 use `arrow keys` or `hjkl` to navigate
 
@@ -236,7 +234,19 @@ then select Graphics driver
 
 leave other options as is then select `Install`
 
-## Grub
+---
+
+#### Trouble Shooting
+
+`Module Not Found Error` after `archinstall` command: Install missing modules
+
+```sh
+pacman -Sy python python-pyparted python-simple-term-menu python-annotated-types python-pydantic python-pydantic-core python-typing_extensions archinstall
+```
+
+---
+
+### Grub
 
 Since the install script may have not installed grub properly
 
@@ -266,13 +276,17 @@ shutdown now
 
 The ArchLinux is installed
 
-now you can remove the USB drive
+Now you can exit root session shutdown with `shutdown now` and remove the USB drive
+
+---
+
+## Login to Hyprland
 
 From the login window change the sessin from `Hyprland(uwsm-managed)` which is
 selected by default to just
 `Hyprland`
 
-## Connect to Wi-Fi
+### Connect to Wi-Fi
 
 Install `networkmanager`
 
@@ -305,7 +319,7 @@ check connection
 nmcli connection show
 ```
 
-## Windows entry to grub menu
+### Windows entry to grub menu
 
 noticed that there was no option to boot into Windows in GRUB menu
 
@@ -347,7 +361,7 @@ now you can choose to boot into Windows
 
 from grub menu press c to go into terminal
 
-```bash
+```sh
 vidieo info
 ```
 
@@ -367,40 +381,81 @@ recreate the grub config
 
 ---
 
-## Delete Arch Linux
+## Delete Arch
 
-boot into windows and open `Disk Management` and remove the `Primary Partition` for Arch Linux first
+You can't remove EFI partition from `Disk Management`
 
 to delete the Boot EFI partition open CMD as admin
 
-```powershell
+```sh
 diskpart
 ```
 
 show all the drives connected to PC
 
-```powershell
+```sh
 list disk
 ```
 
 select disk
 
-```powershell
+```sh
 select disk 0
 ```
 
 and list all the partitions
 
-```powershell
+```sh
 list partition
 ```
 
 select and delete partition 5 which is EFI for arch linux
 
-```powershell
-delete partiion override
+```sh
+delete partition override
 ```
 
-Now it is deleted
+---
 
-btw you can use `sel` and `del` as alias
+### Clean Install USB
+
+First with `diskpart` select the usb drive
+
+remove all partitions
+
+```sh
+clean
+```
+
+create new partition
+
+```sh
+create partition primary
+```
+
+format the partition
+
+```sh
+format fs=exfat quick
+```
+
+give the partition a letter
+
+```sh
+assign
+```
+
+Exit out of `diskpart`
+
+```sh
+exit
+```
+
+- Aliases
+  - select: `sel`
+  - delete: `del`
+  - partition: `part`
+
+---
+
+#### Happy Hacking 🎉
