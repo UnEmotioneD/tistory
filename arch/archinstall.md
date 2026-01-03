@@ -1,76 +1,76 @@
----
-id: archinstall
-aliases: []
-tags: []
----
+# Arch Install
 
-# Arch 리눅스 설치
+## Install Environment
 
-## 설치 환경
+- Thinkpad T14 Gen4, intel CPU & integrated GPU
+- Dual boot with Windows 11
 
-- Thinkpad T14 Gen4, 인텔 CPU & 내장 GPU
-- Windows 11
+## Referenced YouTube
 
-## 참고한 유튜브
-
-### archinstall 스크립트 사용
+use `archinstall` script
 
 - [Ksk Royal](https://www.youtube.com/watch?v=4dKzYmhcGEU&list=WL&index=2&t=796s)
 
-## Table of contents
+## List of contents
 
-- [After booting into Arch](#설치전-작업)
+- [Before Install](#before-install)
 - [Synchronize pacman to DB](#synchronize-package-to-databases)
 - [Partitioning](#partitioning)
 - [Format Partitions](#format-partitions)
 - [Mount Partitions](#mount-the-partitions)
-- [archinstall](#설치-시작)
-- [Connect to Wi-Fi nmcli](#connect-to-wi-fi-nmcli)
+- [start install](#start-install)
+  - [trouble-shoot](#trouble-shooting)
+- [Grub](#grub)
+- [Connect to Wi-Fi](#connect-to-wi-fi)
 - [Fix flatpak](#for-kde-plasma)
 - [Add Windows to GRUB](#windows-entry-to-grub-menu)
 - [Delete ArchLinux](#delete-arch-linux)
 
-## 설치전 작업
+---
 
-윈도우 디스크관리자에서 최소 40GB의 공간 만들기
+## Before Install
 
-Thinkpad: Enter 그리고 F1을 눌러서 BIOS Setup으로 진입
+Use windows `disk mamanger` create at least 40GB of free space
 
-Security &rarr; Secure Boot 로 이동해서
+BIOS mode: on thinkpad press enter and f1
+
+```bash
+Security > Secure Boot
+```
 
 - Secure Boot: off
 - Clear All Secure Boot Keys
 - Allow Microsoft 3rd Party UEFI CA: off
 
-F10 눌러서 저장하고 나가기
+Save and restart: `F10`
 
-다시 Enter 그리고 F12 로 리눅스 설치 USB 선택
+Press enter again then `F12` select the drive with arch iso
 
-가장 첫번째 선택
+Select the very first item
 
-## 터미널에 들어와서
+## Inside Terminal
 
-기기 해상도에 맞게 글자 크기 변경
+Set right font size for the display
 
 ```sh
 setfont ter-132n
 ```
 
-## iwctl 사용해서 wi-fi 연결
+## Connect to Wi-Fi
 
-iwd 모드 진입
+enter `iwd` mode
 
 ```sh
 iwctl
 ```
 
-기기에 있는 network 인터페이스 조회
+show machine's network interface
 
 ```sh
 device list
 ```
 
-show the list of Wi-Fi networks
+show list of Wi-Fi networks
 
 ```sh
 station wlan0 get-networks
@@ -82,9 +82,7 @@ connect to Wi-Fi
 station wlan0 connect "{name of wi-if}"
 ```
 
-then enter password
-
-exit iwd mode
+enter password and exit `iwd` mode
 
 ```sh
 exit
@@ -106,20 +104,16 @@ clear
 
 ## Synchronize package to databases
 
-pacman을 업데이트하고
+update pacman
 
 ```sh
 pacman -Sy
 ```
 
-archlinux-keyring과 archinstall를 설치
+install `archlinux-keyring` and `archinstall` script
 
 ```sh
-pacman -S archlinux-keyring
-```
-
-```sh
-pacman -S archinstall
+pacman -S archlinux-keyring archinstall
 ```
 
 To proceed type `Y` or just press `enter`
@@ -130,25 +124,27 @@ To proceed type `Y` or just press `enter`
 lsblk
 ```
 
+more info with `-a`
+
 ```sh
 lsblk -a
 ```
 
-를 이용해서 더 정확하게 볼 수 있다
+`cfdisk` into the drive
+
+could be `nvme0` or `sda` depending on the hardware
 
 ```sh
 cfdisk /dev/nvme0n1
 ```
 
-또는 `nvme0` 가 아니라 `sda` 라고 뜰 수 도 있다
+1. use arrow key to select `Free space` then `New`
 
-화살표를 이용해서 `Free space` 로 이동한다음 `New` 선택
+2. allocate `1G`(1 Gigabyte) and change `Type` to `EFI`
 
-`1G` 를 할당한다음에 `Type`를 `EFI`로 바꿈
+3. allocate every `Free space` left and set to `Linux filesystem`
 
-나머지 `Free space`에 공간을전부 할당하고 `Liux filesystem`로 지정
-
-그리고 `Write`를 선택하고 `yes`를 치고서 나온다
+4. Finally select `Write` type `yes`
 
 ## Format partitions
 
@@ -186,16 +182,16 @@ and mount it
 mount /dev/nvme0n1p5 /mnt/boot
 ```
 
-`lsblk`를 이용해서 장착 됬는지 확인한다
+confirm mount with `lsblk`
 
 | NAME      | MOUNTPOINTS |
 | --------- | ----------- |
 | nvme0n1p5 | /mnt/boot   |
 | nvme0n1p6 | /mnt        |
 
-## 설치 시작
+## Start Install
 
-이제 모든 준비가 끝났고 설치 스크립트를 사용할 수 있음
+execute the `archinstall` script
 
 ```sh
 archinstall
@@ -203,11 +199,13 @@ archinstall
 
 ### Trouble Shooting
 
-- Module Not Found Error가 뜬다면
+`Module Not Found Error` after `archinstall` command: Install missing modules
 
 ```sh
 pacman -Sy python python-pyparted python-simple-term-menu python-annotated-types python-pydantic python-pydantic-core python-typing_extensions archinstall
 ```
+
+---
 
 use `arrow keys` or `hjkl` to navigate
 
@@ -232,18 +230,15 @@ then select Graphics driver
 
 - Network configuration: `Use NetworkManager`
 
-- Additional packages: `brightnessctl`
-  - hyprland.conf에 키가 설정되어 있지만 패캐지가 없기때문에
-
-  `git stow neovim hyprpaper waybar ttf-meslo-nerd otf-font-awesome`
+- Additional packages: `brightnessctl git stow neovim hyprpaper waybar ttf-meslo-nerd otf-font-awesome`
 
 - Timezon: `Asia/Seoul`
 
 leave other options as is then select `Install`
 
-## grub 설치
+## Grub
 
-설치 스크립트가 grub를 제대로 설치 하지 못할 수도 있어서
+Since the install script may have not installed grub properly
 
 ```sh
 pacman -Sy GRUB efibootmgr dosfstools mtools
@@ -273,28 +268,32 @@ The ArchLinux is installed
 
 now you can remove the USB drive
 
-비밀번호 입력화면에서 session 을 Hyprland(uwsm-managed) 에서 그냥 Hyprland 로
-바꾸고 로그인한다
+From the login window change the sessin from `Hyprland(uwsm-managed)` which is
+selected by default to just
+`Hyprland`
 
-## Connect to Wi-Fi nmcli
+## Connect to Wi-Fi
 
-설치되어 있지 않으면 `pacman`으로 설치
+Install `networkmanager`
 
 ```sh
 sudo pacman -S networkmanager
 ```
 
-```sh
-sudo systemctl enable --now NetworkManager
-```
+Start and enable to start it every time
 
 ```sh
+sudo systemctl enable --now NetworkManager
 sudo systemctl start --now NetworkManager
 ```
+
+Check searched wi-fi
 
 ```sh
 nmcli device wifi list
 ```
+
+Connect to wi-fi
 
 ```sh
 nmcli device wifi connect "{wifi list}" password "{password}"
