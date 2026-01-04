@@ -53,6 +53,18 @@ bat cache --build
 
 [flameshot - command line option](https://flameshot.org/docs/advanced/commandline-options/)
 
+- `gui` : select to capture
+- `screen` : whole screen
+- `full` : every thing on monitor
+
+- copy to clipboard and save to path
+
+```i3config
+bindsym Mod1+shift+j exec --no-startup-id flameshot gui    --clipboard --path ~/Pictures/screenshots
+bindsym Mod1+shift+k exec --no-startup-id flameshot screen --clipboard --path ~/Pictures/screenshots
+bindsym Mod1+shift+l exec --no-startup-id flameshot full   --clipboard --path ~/Pictures/screenshots
+```
+
 ---
 
 ## Lazygit
