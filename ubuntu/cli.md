@@ -16,8 +16,6 @@
 - [lazygit](#lazygit)
 - [fastfetch](#fastfetch)
 - [speedtest-cli](#speedtest-cli)
-- [github cli](#github-cli)
-  - [markdown preview](#markdown-preview)
 
 ---
 
