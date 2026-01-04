@@ -1,6 +1,8 @@
 # Firefox
 
-Type `about:config` in url field to enter advanced config
+Type `about:config` in URL to enter advanced config
+
+Accept Warning to proceed
 
 ---
 
@@ -14,7 +16,7 @@ Middle clicking items in the book mark while staying in current tab
 
 ---
 
-## Fullscreen Notification
+## Disable Fullscreen Notification
 
 Turn off full screen notification
 
@@ -24,4 +26,4 @@ Turn off full screen notification
 
 ---
 
-### Happy Browsing 🦊
+### Happy Browsing 🔥🦊
