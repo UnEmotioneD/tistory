@@ -2,72 +2,73 @@
 
 ## Install Environment
 
-- Thinkpad T14 Gen4, intel CPU & integrated GPU
-- Dual boot with Windows 11
+- Thinkpad T14 Gen4, Intel CPU & integrated GPU
+- Running Windows 11
 
 ## Referenced YouTube
 
-use `archinstall` script
+- [Ksk Royal - How to Udal Boot Arch Linxu and Windows 11](https://www.youtube.com/watch?v=BB_SnWBQ6xw)
 
-- [Ksk Royal](https://www.youtube.com/watch?v=4dKzYmhcGEU&list=WL&index=2&t=796s)
-
-## List of contents
+## List of Contents
 
 - [Before Install](#before-install)
-- [Inside Install Drive](#inside-install-drive)
-  - [Synchronize to DB](#synchronize-to-databases)
+  - [Create Diskspace](#create-diskspace)
+  - [Enter BIOS](#enter-bios)
+- [Live Environment](#live-environment)
+  - [Set Font](#set-font)
+  - [Wi-Fi with iwctl](#wi-fi-with-iwctl)
+  - [Sync to DB](#sync-to-db)
   - [Partition](#partition)
   - [Format Partitions](#format-partitions)
   - [Mount Partitions](#mount-partitions)
-  - [start install](#start-install)
-- [Grub](#grub)
+  - [Start Install](#start-install)
+  - [GRUB](#grub)
 - [Login to Hyprland](#login-to-hyprland)
-- [Wi-Fi with nmcli](#wi-fi-with-nmcli)
-- [Add Windows to GRUB](#windows-entry-to-grub-menu)
-- [Delete Arch](#delete-arch)
-  - [Clean Install USB](#clean-install-usb)
+  - [Wi-Fi with Nmcli](#wi-fi-with-nmcli)
+  - [OS Prober](#os-prober)
+  - [Delete Arch](#delete-arch)
+- [Nuke](#nuke)
+  - [Delete Arch](#delete-arch)
+  - [Clear Installation USB](#clear-installation-usb)
 
 ---
 
 ## Before Install
 
-### Create Disk Space
+### Create Diskspace
 
-Use windows `disk mamanger` create at least 40GB of free space
+use windows `disk mamanger` to create at least 40gb of free space
 
-### Enter BIOS
+### Enter Bios
 
-Thinkpad: press `Ender` from boot screen and `F1`
+thinkpad: from boot screen `enter` &rarr; `f1`
 
 ```sh
-Security > Secure Boot
+security > secure boot
 ```
 
-- Secure Boot: off
-- Clear All Secure Boot Keys
-- Allow Microsoft 3rd Party UEFI CA: off
+- secure boot: off
+- clear all secure boot keys
+- allow microsoft 3rd party uefi ca: off
+- save and restart: `f10`
 
-Save and restart: `F10`
+press enter again then `f12` select the drive with arch iso
 
-Press enter again then `F12` select the drive with arch iso
-
-Select first item
+select first boot option
 
 ---
 
-## Inside Install Drive
+## Live Environment
 
-### Set Font for Terminal
-
-Set right font size for the display
+### Set Font
 
 ```sh
 setfont ter-132n
 ```
 
-### Wi-Fi with iwctl
+---
 
-enter `iwd` mode
+### Wi-Fi with iwctl
 
 ```sh
 iwctl
@@ -79,42 +80,28 @@ show machine's network interface
 device list
 ```
 
-show list of Wi-Fi networks
+show list of wi-fi networks
 
 ```sh
 station wlan0 get-networks
 ```
 
-connect to Wi-Fi
+connect to wi-fi
 
 ```sh
 station wlan0 connect "{name of wi-if}"
 ```
 
-enter password and exit `iwd` mode
-
-```sh
-exit
-```
-
-check the Wi-Fi with `ping`
-
-```sh
-ping google.com
-```
-
-Stop pining with `Ctrl + C`
-
-Clear terminal window with `clear` command
+exit `iwd` check connection with `ping`
 
 ---
 
-### Synchronize to databases
+### Sync to DB
 
 update pacman
 
 ```sh
-pacman -Sy
+pacman -Syu
 ```
 
 install `archlinux-keyring` and `archinstall` script
@@ -123,7 +110,9 @@ install `archlinux-keyring` and `archinstall` script
 pacman -S archlinux-keyring archinstall
 ```
 
-To proceed type `Y` or just press `enter`
+to proceed type `y` or just press `enter`
+
+---
 
 ### Partition
 
@@ -131,123 +120,119 @@ To proceed type `Y` or just press `enter`
 lsblk
 ```
 
-more info with `-a`
-
-```sh
-lsblk -a
-```
+could be `nvme0` or `sda` depending on the hardware
 
 `cfdisk` into the drive
-
-could be `nvme0` or `sda` depending on the hardware
 
 ```sh
 cfdisk /dev/nvme0n1
 ```
 
-1. use arrow key to select `Free space` then `New`
+1. select `free space` then `new`
 
-2. allocate `1G`(1 Gigabyte) and change `Type` to `EFI`
+2. allocate `1g` and change `type` to `efi`
 
-3. allocate every `Free space` left and set to `Linux filesystem`
+3. allocate every `free space` left and set to `linux filesystem`
 
-4. Finally select `Write` type `yes`
+4. select `write` and type `yes`
 
-### Format partitions
+---
 
-Check created partitions with `lsblk`
+### Format Partitions
 
-`EFI` partition to `fat`
+check created partitions with `lsblk`
+
+`efi` partition to `fat`
 
 ```sh
-mkfs.fat -F32 /dev/nvme0n1p5
+mkfs.fat -F 32 /dev/nvme0n1p5
 ```
 
-`Root` partition to `ext4`
+`root` partition to `ext4`
 
 ```sh
 mkfs.ext4 /dev/nvme0n1p6
 ```
 
-### Mount partitions
+---
 
-mount `root` partition to `/mnt`
+### Mount Partitions
 
 ```sh
 mount /dev/nvme0n1p6 /mnt
-```
-
-create directory to mount to efi partition to
-
-```sh
 mkdir /mnt/boot
-```
-
-and mount it
-
-```sh
 mount /dev/nvme0n1p5 /mnt/boot
 ```
 
-`lsblk` to confirm mount
+confirm with `lsblk`
 
 | NAME      | MOUNTPOINTS |
 | --------- | ----------- |
 | nvme0n1p5 | /mnt/boot   |
 | nvme0n1p6 | /mnt        |
 
+---
+
 ### Start Install
 
-execute the `archinstall` script
+execute:
 
 ```sh
 archinstall
 ```
 
-use `arrow keys` or `hjkl` to navigate
+use arrow or `hjkl` to navigate
 
-- Mirrors
-  press `/` to search and type `South Korea` to select the mirror regions
+- mirrors: `South Korea` (search with `/`)
 
-- Disk configuration &rarr; partitioning &rarr; Pre-mounted configuration
-  type `/mnt` which is where root partition is mounted to
+- disk configuration
+  - partitioning
+    - pre-mounted configuration
+      - type `/mnt` which is where root partition is mounted to
 
-- Bootloader select `Grub`
+- bootloader: `Grub`
 
 - set the root password
 
-- User Account &rarr; Add a user and set it up as superuser then Confirm and exit
+- user account
+  - add a user and set it up as superuser then confirm and exit
 
-- Profile &rarr; Type &rarr; Desktop
+- profile &rarr; type &rarr; desktop
   select `Hyprland`
 
-then select Graphics driver
+- select graphics driver
 
-- Audio: `pipewire`
+- audio: `pipewire`
 
 - Network configuration: `Use NetworkManager`
 
-- Additional packages:
+- additional packages:
+  - `brightnessctl`: how come this is not installed by default
+  - `git`: to clone from github
+  - `stow`: to use my dotfiles
+  - `otf-font-awesome`: used by waybar
 
-```sh
-brightnessctl git stow neovim hyprpaper waybar ttf-meslo-nerd otf-font-awesome
+```python
+brightnessctl git neovim stow hyprpaper waybar ttf-meslo-nerd otf-font-awesome
 ```
 
 - Timezon: `Asia/Seoul`
 
-leave other options as is then select `Install`
+leave other options as is and select `Install`
 
 ---
 
-### Grub
+### GRUB
 
-Since the install script may have not installed grub properly
+after `archinstall` is done
+
+since the install script may have not installed grub properly
 
 ```sh
-pacman -Sy GRUB efibootmgr dosfstools mtools
+pacman -Syu GRUB efibootmgr dosfstools mtools
 ```
 
-install GRUB into /boot partition
+install grub into /boot partition
 
 ```sh
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
@@ -267,40 +252,40 @@ and shutdown the system
 shutdown now
 ```
 
-The ArchLinux is installed
+the archlinux is installed
 
-Now you can exit root session shutdown with `shutdown now` and remove the USB drive
+now you can exit root session shutdown with `shutdown now` and remove the usb drive
 
 ---
 
 ## Login to Hyprland
 
-From the login window change the sessin from `Hyprland(uwsm-managed)` which is
+from the login window change the sessin from `Hyprland(uwsm-managed)` which is
 selected by default to just
 `Hyprland`
 
 ### Wi-Fi with nmcli
 
-Install `networkmanager`
+install `networkmanager`
 
 ```sh
 sudo pacman -S networkmanager
 ```
 
-Start and enable to start it every time
+start and enable to start it every time
 
 ```sh
 sudo systemctl enable --now NetworkManager
 sudo systemctl start --now NetworkManager
 ```
 
-Check searched wi-fi
+check searched wi-fi
 
 ```sh
 nmcli device wifi list
 ```
 
-Connect to wi-fi
+connect to wi-fi
 
 ```sh
 nmcli device wifi connect "{wifi list}" password "{password}"
@@ -312,9 +297,11 @@ check connection
 nmcli connection show
 ```
 
-### Windows entry to grub menu
+---
 
-noticed that there was no option to boot into Windows in GRUB menu
+### OS Prober
+
+noticed that there was no option to boot into windows in grub menu
 
 enter into root mode
 
@@ -330,8 +317,6 @@ nvim /etc/default/grub
 
 at the bottom uncomment the `GRUB_DISABLE_OS_PROBER=false`
 
-`:wq` to write changes and quit
-
 ```sh
 pacman -Sy os-prober
 ```
@@ -342,25 +327,29 @@ update the grub configurations
 grub-mkconfig -o /boot/grub/gurb.cfg
 ```
 
-you should see `Found Windows Boot Manager on /dev/nvme0n1p1@/efi/Microsoft/Boot/bootmgfw.efi`
+you should see:
 
-```sh
-reboot now
+```bash
+found windows boot manager on /dev/nvme0n1p1@/efi/microsoft/boot/bootmgfw.efi
 ```
 
-now you can choose to boot into Windows
+now you can choose to boot into windows
 
-## Delete Arch
+---
 
-You can't remove EFI partition from `Disk Management`
+## Nuke
 
-to delete the Boot EFI partition open CMD as admin
+### Delete Arch
+
+you can't remove efi partition from `disk management`
+
+to delete the boot efi partition open cmd as admin
 
 ```sh
 diskpart
 ```
 
-show all the drives connected to PC
+show all the drives connected to pc
 
 ```sh
 list disk
@@ -378,7 +367,7 @@ and list all the partitions
 list partition
 ```
 
-select and delete partition 5 which is EFI for arch linux
+select and delete partition 5 which is efi for arch linux
 
 ```sh
 delete partition override
@@ -386,9 +375,9 @@ delete partition override
 
 ---
 
-### Clean Install USB
+### Clear Installation USB
 
-First with `diskpart` select the usb drive
+select usb with `diskpart`
 
 remove all partitions
 
@@ -414,13 +403,13 @@ give the partition a letter
 assign
 ```
 
-Exit out of `diskpart`
+exit out of `diskpart`
 
 ```sh
 exit
 ```
 
-- Aliases
+- aliases
   - select: `sel`
   - delete: `del`
   - partition: `part`
