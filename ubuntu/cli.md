@@ -9,9 +9,8 @@
 - stow
 - [tmux](#tmux)
 - [bat](#bat)
-- eza
-- zoxide
-- [flameshot](#flameshot)
+- [eza](#eze)
+- [zoxide](#zoxide)
 - [yazi](#yazi)
 - [lazygit](#lazygit)
 - [fastfetch](#fastfetch)
@@ -22,7 +21,7 @@
 APT installable packages
 
 ```bash
-sudo apt install git curl stow tmux bat eza zoxide flameshot
+sudo apt install git curl stow tmux bat eza zoxide
 ```
 
 ---
@@ -49,31 +48,44 @@ bat cache --build
 
 ---
 
-## Flameshot
+## [Eza](https://github.com/eza-community/eza)
 
-[flameshot - command line option](https://flameshot.org/docs/advanced/commandline-options/)
+`ls` command replcement
 
-- `gui` : select to capture
-- `screen` : whole screen
-- `full` : every thing on monitor
+add the following alias to `.bashrc` or `.zshrc`
 
-- copy to clipboard and save to path
+- list in vertical line
+- color and icons
+- directory first
+- show git status
 
-```i3config
-bindsym Mod1+shift+j exec --no-startup-id flameshot gui    --clipboard --path ~/Pictures/screenshots
-bindsym Mod1+shift+k exec --no-startup-id flameshot screen --clipboard --path ~/Pictures/screenshots
-bindsym Mod1+shift+l exec --no-startup-id flameshot full   --clipboard --path ~/Pictures/screenshots
+```sh
+alias ls="eza --oneline --color=always --icons=always --group-directories-first --git"
 ```
 
 ---
 
-## Lazygit
+## [Zoxide](https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation)
 
-Git in TUI
+better `cd`
 
-[lazygit/installation/Debian and Ubuntu](https://github.com/jesseduffield/lazygit?tab=readme-ov-file#debian-and-ubuntu)
+- Bash
 
-Download with `curl` and install
+```sh
+eval "$(zoxide init bash)"
+```
+
+- ZSH
+
+```sh
+eval "$(zoxide init zsh)"
+```
+
+---
+
+## [Lazygit](https://github.com/jesseduffield/lazygit?tab=readme-ov-file#debian-and-ubuntu)
+
+git wrapped in tui
 
 ```bash
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*')
@@ -98,23 +110,17 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 ---
 
-## Yazi
+## [Yazi](https://yazi-rs.github.io/docs/installation#debian)
 
-- Terminal File Explorer
+terminal file explorer
 
-- [Installation/Yazi](https://yazi-rs.github.io/docs/installation/)
-
-Build from source
-
-create local branch and remove commits to use the stable version
-
-prerequist
+### Prerequist
 
 ```bash
 sudo apt install ffmpeg 7zip jq poppler-utils fd-find ripgrep zoxide imagemagick
 ```
 
-Setup cargo
+### Setup Cargo
 
 - [Install Rust](https://rust-lang.org/tools/install/)
 
@@ -123,7 +129,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup update
 ```
 
-Clone it to your disered directory from git and build it
+### Clone and Build
 
 ```bash
 git clone https://github.com/sxyazi/yazi.git
@@ -137,7 +143,7 @@ and move `yazi`, `ya` files to `$PATH`
 sudo mv target/release/yazi target/release/ya /usr/local/bin/
 ```
 
-### Uninstall
+### Uninstall Yazi
 
 Remove the `yazi` and `ya` files under the `$PATH`
 
@@ -151,7 +157,7 @@ Then remove the cloned repo
 
 ## Fastfetch
 
-Install with `PPA`
+### Install with PPA
 
 ```bash
 sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
@@ -159,7 +165,7 @@ sudo apt upgrade
 sudo apt install fastfetch
 ```
 
-Uninstall
+### Uninstall
 
 ```bash
 sudo apt remove fastfetch
