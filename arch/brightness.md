@@ -52,7 +52,7 @@ brillo -q -u 1000 -U 5  # brightness down
 
 ## Notes
 
-- reboot for brillo to work
+- since installed with `setgid` reboot for brillo to work
 
 ---
 
