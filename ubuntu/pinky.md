@@ -49,6 +49,15 @@ colcon build
   - check if jazzy is sourced
   - check where you ran commands
 
+### Get Required Commands
+
+```sh
+# do it every time you're inside "pinky_pro" dir
+source ./install/local_setup.bash
+# does the same thing
+source ./install/setup.bash
+```
+
 ## Connect to Pinky
 
 After `buzzer` from pinky
@@ -87,6 +96,8 @@ export ROS_DOMAIN_ID=25
 ```
 
 Run `bring up` from pinky
+
+what is `bringup`? activating pinky's motor
 
 ```bash
 ros2 launch pinky_bringup bringup_robot.launch.xml
@@ -180,13 +191,16 @@ Inside the `.bash_aliases` of `pinky`
 ```bash
 alias bringup="ros2 launch pinky_bringup bringup_robot.launch.xml"
 alias slam="ros2 launch pinky_navigation map_building.launch.xml"
+# use $ savemap {name-of-map}
 alias savemap="ros2 run nav2_map_server map_saver_cli -f"
+# use $ loadmap map:={name-of-map}
+alias loadmap="ros2 launch pinky_navigation bringup_launch.xml"
 ```
 
 Set alias inside local machine
 
 ```bash
-alias riv="ros2 launch pinky_navigation map_view.launch.xml"
+alias rviz="ros2 launch pinky_navigation map_view.launch.xml"
 alias teleop="ros2 run teleop_twist_keyboard teleop_twist_keyboard"
 ```
 
