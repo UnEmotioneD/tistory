@@ -1,5 +1,16 @@
 # Advanced Package Tool
 
+## List of Content
+
+- [Before Use](#before-use)
+- [How to Use](#how-to-use)
+- [Info](#info)
+- [Flags](#flags)
+- [Cleanup](#cleanup)
+- [Fix Install](#fix-install)
+
+---
+
 ## Before Use
 
 - `sudo`: Super User Do
@@ -90,4 +101,28 @@ sudo apt clean
 
 ---
 
-### Happy Hacking 🎉
+## Fix Install
+
+### Fix Broken Dependencies
+
+```sh
+sudo apt install -f
+```
+
+### Check not being upgraded
+
+```sh
+sudo apt dist-upgrade -a
+```
+
+You may install the package separated
+
+### Run Final Upgrade
+
+```sh
+sudo apt full-upgrade -y
+```
+
+---
+
+#### Happy Hacking 🎉
