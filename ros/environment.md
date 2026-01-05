@@ -56,7 +56,7 @@ deactivate
 Inside the python venv install jupyter module
 
 ```bash
-pip install jupyter
+pip3 install jupyter
 ```
 
 Launch jupyter notebook
