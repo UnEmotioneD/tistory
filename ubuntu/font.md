@@ -57,6 +57,8 @@ My favorite font
 
 ```toml
 MesloLGS Nerd Fonts Mono
+
+JetBrainsMono Nerd Font
 ```
 
 ---
