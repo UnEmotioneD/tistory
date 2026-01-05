@@ -3,7 +3,7 @@
 - Install nerd fonts for current user only
 
 - [x] Meslo
-- [ ] Jetbranins
+- [x] Jetbrains
 - [ ] D2Coding
 
 ## Create Dir
@@ -12,7 +12,7 @@ Create dedicated directory for fonts
 
 `cd` into it
 
-```bash
+```sh
 mkdir -p ~/.local/share/fonts
 cd ~/.local/share/fonts
 ```
@@ -23,21 +23,31 @@ Install `Meslo` with `wget`
 
 Remove `.zip` file after unzip
 
-```bash
+### Meslo Nerd Fonts
+
+```sh
 wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Meslo.zip
 unzip Meslo.zip
 rm Melso.zip
 ```
 
+### JetBrains
+
+```sh
+wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
+unzip JetBrainsMono.zip
+rm JetBrainsMono.zip
+```
+
 ## Refresh Font Cache
 
-```bash
+```sh
 fc-cache -fv
 ```
 
 Check with grep
 
-```bash
+```sh
 fc-list | grep meslo
 ```
 
