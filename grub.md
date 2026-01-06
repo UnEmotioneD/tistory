@@ -80,7 +80,7 @@ from grub menu press c to go into terminal
 - Newer BIOS
 
 ```sh
-vidieoinfo
+videoinfo
 ```
 
 - Older BIOS
