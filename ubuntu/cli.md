@@ -15,12 +15,13 @@
 - [lazygit](#lazygit)
 - [fastfetch](#fastfetch)
 - [speedtest-cli](#speedtest-cli)
+- [pavucontrol](#pavucontrol)
 
 ---
 
 APT installable packages
 
-```bash
+```sh
 sudo apt install git curl stow tmux bat eza zoxide
 ```
 
@@ -30,19 +31,19 @@ sudo apt install git curl stow tmux bat eza zoxide
 
 File previewer
 
-```bash
+```sh
 sudo apt install bat
 ```
 
 Inside `.bash_aliases` add alias to avoid collision
 
-```bash
+```sh
 alias bat='batcat'
 ```
 
 Stow `bat` theme from my `dotfiles` and build cache to make the theme work
 
-```bash
+```sh
 bat cache --build
 ```
 
@@ -104,7 +105,7 @@ Clone TPM(tmux plugins manager) for use
 
 `~/.tmux/plugins`: where plugins will be installed
 
-```bash
+```sh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
@@ -116,7 +117,7 @@ terminal file explorer
 
 ### Prerequist
 
-```bash
+```sh
 sudo apt install ffmpeg 7zip jq poppler-utils fd-find ripgrep zoxide imagemagick
 ```
 
@@ -124,14 +125,14 @@ sudo apt install ffmpeg 7zip jq poppler-utils fd-find ripgrep zoxide imagemagick
 
 - [Install Rust](https://rust-lang.org/tools/install/)
 
-```bash
+```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup update
 ```
 
 ### Clone and Build
 
-```bash
+```sh
 git clone https://github.com/sxyazi/yazi.git
 cd yazi
 cargo build --release --locked
@@ -139,7 +140,7 @@ cargo build --release --locked
 
 and move `yazi`, `ya` files to `$PATH`
 
-```bash
+```sh
 sudo mv target/release/yazi target/release/ya /usr/local/bin/
 ```
 
@@ -147,7 +148,7 @@ sudo mv target/release/yazi target/release/ya /usr/local/bin/
 
 Remove the `yazi` and `ya` files under the `$PATH`
 
-```bash
+```sh
 sudo rm /usr/local/bin/yazi /us/local/bin/ya
 ```
 
@@ -159,7 +160,7 @@ Then remove the cloned repo
 
 ### Install with PPA
 
-```bash
+```sh
 sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
 sudo apt upgrade
 sudo apt install fastfetch
@@ -167,7 +168,7 @@ sudo apt install fastfetch
 
 ### Uninstall
 
-```bash
+```sh
 sudo apt remove fastfetch
 sudo add-apt-repository --remove ppa:zhangsongcui3371/fastfetch
 ```
@@ -176,9 +177,19 @@ sudo add-apt-repository --remove ppa:zhangsongcui3371/fastfetch
 
 ## Speedtest-cli
 
-```bash
+```sh
 sudo apt install speedtest-cli
 speedtest --secure
+```
+
+---
+
+## Pavucontrol
+
+manage audio with gui
+
+```sh
+sudo apt install pavucontrol
 ```
 
 ---
