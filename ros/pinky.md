@@ -141,6 +141,12 @@ And start `SLAM`
 ros2 launch pinky_navigation map_building.launch.xml
 ```
 
+inside `pinky_pro/` run:
+
+```sh
+source ./install/local_setup.zsh  # or .bash
+```
+
 From local open `map` to see what pinky sees
 
 ```bash
