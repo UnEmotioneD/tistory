@@ -189,7 +189,10 @@ alias loadmap="ros2 launch pinky_navigation bringup_launch.xml"
 Set alias inside local machine
 
 ```bash
-alias rviz="ros2 launch pinky_navigation map_view.launch.xml"
+# use to map map
+alias rmap="ros2 launch pinky_navigation map_view.launch.xml"
+# use with existing map
+alias rnav="ros2 launch pinky_navigation nav2_view.launch.xml"
 alias teleop="ros2 run teleop_twist_keyboard teleop_twist_keyboard"
 ```
 
