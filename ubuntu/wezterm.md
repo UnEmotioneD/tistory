@@ -48,33 +48,7 @@ Reference: [`Josean - Wezterm`](https://www.josean.com/posts/how-to-setup-wezter
 
 Config file location: `~/.config/wezterm/wezterm.lua`
 
-The config:
-
-```lua
--- Call wezterm config API
-local wezterm = require('wezterm')
-
-return {
-  font = wezterm.font('MesloLGS Nerd Font'),
-  font_size = 14,
-
-  -- disable wezterm tab bar
-  enable_tab_bar = false,
-
-  -- disable all default padding values
-  window_padding = {
-    left = 0,
-    right = 0,
-    top = 0,
-    bottom = 0,
-  },
-
-  color_scheme = 'tokyonight-storm',
-
-  -- explicitly set fps
-  max_fps = 144,
-}
-```
+---
 
 ### Stylua
 
