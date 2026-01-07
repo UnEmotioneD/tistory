@@ -8,7 +8,8 @@
 
 - [Change DNS](#change-dns)
 - [SSH](#ssh)
-- [vscode extension](#vscode-extension)
+- [VSCode Extension](#vscode-extension)
+- [Jupyter From Jetcobot](#jupyter-from-jetcobot)
 
 ---
 
