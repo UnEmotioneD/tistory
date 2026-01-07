@@ -74,4 +74,26 @@ Do the things and you can view jetcobot directories from vscode.
 
 ---
 
+## Jupyter from Jetcobot
+
+create vevn inside jetcobot
+
+inside venv update `pip` and `pymycobot`
+
+inside venv install `opencv-python` and `jupyter`
+
+to open jupyter notebook inside jetcobot:
+
+```sh
+jupyter notebook --ip=0.0.0.0 --no-browser --allow-root
+```
+
+from local machine's browser enter
+
+```sh
+192.168.5.1:8888
+```
+
+---
+
 ### Happy Hacking 🎉
