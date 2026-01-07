@@ -1,10 +1,18 @@
-# Font
+# Fonts
 
 - Install nerd fonts for current user only
 
+- [x] fonts-noto-cjk
+- [x] fonts-nanum
 - [x] Meslo
 - [x] Jetbrains
 - [ ] D2Coding
+
+## With APT
+
+```sh
+sudo apt install fonst-noto-cjk fonts-nanum
+```
 
 ## Create Dir
 
