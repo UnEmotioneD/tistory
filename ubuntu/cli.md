@@ -70,16 +70,18 @@ alias ls="eza --oneline --color=always --icons=always --group-directories-first 
 
 better `cd`
 
+load `zoxide` and override `cd` to use zoxide
+
 - Bash
 
 ```sh
-eval "$(zoxide init bash)"
+eval "$(zoxide init --cmd cd bash)"
 ```
 
 - ZSH
 
 ```sh
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 ```
 
 ---
