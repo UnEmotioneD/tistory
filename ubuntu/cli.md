@@ -49,7 +49,9 @@ bat cache --build
 
 ---
 
-## [Eza](https://github.com/eza-community/eza)
+## Eza
+
+- [eza - github](https://github.com/eza-community/eza)
 
 `ls` command replcement
 
@@ -66,7 +68,9 @@ alias ls="eza --oneline --color=always --icons=always --group-directories-first 
 
 ---
 
-## [Zoxide](https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation)
+## Zoxide
+
+- [zoxide - github/installation](https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation)
 
 better `cd`
 
@@ -86,7 +90,9 @@ eval "$(zoxide init --cmd cd zsh)"
 
 ---
 
-## [Lazygit](https://github.com/jesseduffield/lazygit?tab=readme-ov-file#debian-and-ubuntu)
+## Lazygit
+
+- [lazygit github/install ubuntu](https://github.com/jesseduffield/lazygit?tab=readme-ov-file#debian-and-ubuntu)
 
 git wrapped in tui
 
@@ -113,7 +119,9 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 ---
 
-## [Yazi](https://yazi-rs.github.io/docs/installation#debian)
+## Yazi
+
+- [yazi install ubuntu](https://yazi-rs.github.io/docs/installation#debian)
 
 terminal file explorer
 
