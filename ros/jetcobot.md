@@ -92,7 +92,7 @@ jupyter notebook --ip=0.0.0.0 --no-browser --allow-root
 from local machine's browser enter
 
 ```sh
-192.168.5.1:8888
+192.168.5.1:8888/tree
 ```
 
 ---
