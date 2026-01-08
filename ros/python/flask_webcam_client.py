@@ -44,7 +44,7 @@ class VideoStreamClient:
             # connect to stream
             response = requests.get(self.server_url, stream=True)
             if response.status_code != 200:
-                print(f"서버 연결 실패: {response.status_code}")
+                print(f"Server connection failed: {response.status_code}")
                 self.stream_active = False
                 return
 

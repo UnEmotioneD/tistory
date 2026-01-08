@@ -11,21 +11,20 @@ frame_lock = threading.Lock()
 
 
 def capture_frames():
-    """actively capture frames"""
     global FRAME
-    # /dev/jetcocam0 카메라 디바이스 열기
+    # open camera at /dev/jetcocam0
     camera = cv2.VideoCapture("/dev/jetcocam0")
     if not camera.isOpened():
-        print("카메라를 열 수 없습니다!")
+        print("Cannot open the camera!!!")
         return
     while True:
         success, img = camera.read()
         if not success:
-            print("프레임을 읽을 수 없습니다.")
+            print("Cannot read the frame!!!")
             time.sleep(0.1)
             continue
 
-        # encode frame and save
+        # encode and save frame
         _, buffer = cv2.imencode(".jpg", img)
         with frame_lock:
             FRAME = buffer.tobytes()
