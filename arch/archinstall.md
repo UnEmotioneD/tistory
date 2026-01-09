@@ -26,7 +26,6 @@
 - [Login to Hyprland](#login-to-hyprland)
   - [Wi-Fi with Nmcli](#wi-fi-with-nmcli)
   - [OS Prober](#os-prober)
-  - [Delete Arch](#delete-arch)
 - [Nuke](#nuke)
   - [Delete Arch](#delete-arch)
   - [Clear Installation USB](#clear-installation-usb)
