@@ -1,18 +1,20 @@
 # Fonts
 
-- Install nerd fonts for current user only
-
 - [x] fonts-noto-cjk
 - [x] fonts-nanum
 - [x] Meslo
 - [x] Jetbrains
 - [ ] D2Coding
 
+---
+
 ## With APT
 
 ```sh
 sudo apt install fonst-noto-cjk fonts-nanum
 ```
+
+---
 
 ## Create Dir
 
@@ -24,6 +26,8 @@ Create dedicated directory for fonts
 mkdir -p ~/.local/share/fonts
 cd ~/.local/share/fonts
 ```
+
+---
 
 ## Install
 
@@ -47,6 +51,8 @@ unzip JetBrainsMono.zip
 rm JetBrainsMono.zip
 ```
 
+---
+
 ## Refresh Font Cache
 
 ```sh
@@ -64,7 +70,7 @@ fc-list | grep meslo
 My favorite font
 
 ```toml
-MesloLGS Nerd Fonts Mono
+MesloLGS Nerd Fonts
 
 JetBrainsMono Nerd Font
 ```
