@@ -8,7 +8,8 @@ Pylint configuration
 [MESSAGES CONTROL]
 disable =
     missing-docstring,
-    too-few-public-methods
+    too-few-public-methods,
+    wrong-import-order,
 ```
 
 `missing-docstring` includes
