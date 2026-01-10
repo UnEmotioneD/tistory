@@ -9,7 +9,7 @@
 - stow
 - [tmux](#tmux)
 - [bat](#bat)
-- [eza](#eze)
+- [eza](#eza)
 - [zoxide](#zoxide)
 - [yazi](#yazi)
 - [lazygit](#lazygit)
