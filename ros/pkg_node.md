@@ -121,3 +121,93 @@ rqt_graph
 select `Nodes/Topics(all)` from top left and refresh
 
 all in separate terminal sessions with `local_setup.zsh` sourced
+
+---
+
+## Define Messages
+
+### Build CMake Package
+
+package with cmake
+
+from `~/Developer/ros2-workspace/`
+
+```sh
+ros2 pkg create --build-type ament_cmake my_first_package_msg
+cd my_first_package_msg
+mkdir msg
+```
+
+Define `Message` or `Interface`
+
+publisher: msg.msg
+sruvice: msg.srv
+actino: msg.action
+
+and inside the `msg/` create `CmdAndPoseVel.msg`
+
+to set the data type data you will send and get
+
+### CMake.txt
+
+inside `CMakde.txt`:
+
+to look for interface file we added
+
+```txt
+find_package(rosidl_default_generators REQUIRED)
+
+rosidl_generate_interfaces(${PROJECT_NAME}
+  "msg/CmdAndPoseVel.msg"
+)
+```
+
+### package.xml
+
+add dependencies
+
+under `<text_depend>` tag
+
+```xml
+  <build_depend>rosidl_default_generators</build_depend>
+  <exec_depend>rosidl_default_runtime</exec_depend>
+  <member_of_group>rosidl_interface_packages</member_of_group>
+```
+
+### Build MSG Package
+
+from `ros2-workspace/` do `colcon build`
+
+if error says `em has no attribute`
+
+install following packages
+
+```sh
+pip3 install empy catkin_pkg lark
+```
+
+### Check Interface
+
+source the `install/local_setup.zsh`
+
+```sh
+ros2 interface show my_first_package_msgs/msg/CmdAndPoseVel
+```
+
+this will show the content of the `CmdAndPoseVel.msg`
+
+---
+
+```sh
+ros2 topic list -l
+```
+
+topic type is a topic's path
+
+---
+
+create 2 topics that sub to 1 topic
+
+---
+
+serve CMakeList.txt has `---` separator to separate data received and sent
