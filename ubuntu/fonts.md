@@ -2,9 +2,11 @@
 
 - [x] fonts-noto-cjk
 - [x] fonts-nanum
-- [x] Meslo
-- [x] Jetbrains
 - [ ] D2Coding
+- [ ] Fira Code
+- [ ] Hack
+- [x] Jetbrains
+- [x] Meslo
 
 ---
 
@@ -16,7 +18,9 @@ sudo apt install fonst-noto-cjk fonts-nanum
 
 ---
 
-## Create Dir
+## With Git
+
+### Create Dir
 
 Create dedicated directory for fonts
 
@@ -29,13 +33,13 @@ cd ~/.local/share/fonts
 
 ---
 
-## Install
+### Install
 
 Install `Meslo` with `wget`
 
 Remove `.zip` file after unzip
 
-### Meslo Nerd Fonts
+- Meslo Nerd Fonts
 
 ```sh
 wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Meslo.zip
@@ -43,7 +47,7 @@ unzip Meslo.zip
 rm Melso.zip
 ```
 
-### JetBrains
+- JetBrains
 
 ```sh
 wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
@@ -62,7 +66,13 @@ fc-cache -fv
 Check with grep
 
 ```sh
-fc-list | grep meslo
+fc-list | grep "MesloLGS Nerd Font"
+```
+
+More cleaner
+
+```sh
+fc-list : family | grep Iosevka
 ```
 
 ## Use
