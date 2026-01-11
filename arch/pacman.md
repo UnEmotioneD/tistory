@@ -2,13 +2,16 @@
 
 How to use pacman
 
-- Install
-- Update
-- Remove
-- Remove Orphaned
-- Search
-- Search Installed
-- Clear cache
+- [Install](#install)
+- [Update](#update)
+- [Remove](#remove)
+  - [Remove orphaned](#remove-orphaned)
+- [Search](#search)
+  - [From Installed](#from-installed)
+  - [From Online](#from-online)
+- [Clear](#cleanup)
+
+---
 
 ## Install
 
@@ -17,6 +20,8 @@ sudo pacman -S vim # normal install
 sudo pacman -S --noconfirm neovim # without confirm
 sudo pacman -S emacs --needed # reinstall
 ```
+
+---
 
 ## Update
 
@@ -31,6 +36,8 @@ refersh package database only
 ```sh
 sudo pacman -Sy
 ```
+
+---
 
 ## Remove
 
@@ -66,15 +73,19 @@ remove every orphaned
 sudo pacman -Rns $(pacman -Qtdq)
 ```
 
+---
+
 ## Search
 
-### From Installed List
+### From Installed
 
 search from database
 
 ```sh
 pacman -Ss ttf-jetbrains
 ```
+
+### From Online
 
 list all every packages installed
 
@@ -95,6 +106,8 @@ dependencies only
 ```sh
 pacman -Qd
 ```
+
+---
 
 ## Cleanup
 
@@ -121,3 +134,7 @@ keep last 2 versions
 ```sh
 paccahce -rk2
 ```
+
+---
+
+#### Happy Hacking 🎉
