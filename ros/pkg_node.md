@@ -25,6 +25,68 @@ have to create session before transferring data
 
 topic & service combined
 
+and has much more features
+
+action client and server
+
+client sends goal to server also can cancel goal
+
+can request result
+
+server can give feedback and status
+
+- service
+  - send goal
+  - cancel goa
+  - get result
+
+- topic
+  - feedback
+  - status
+
+service vs topic
+
+what has to be done is service and data should not be lost
+
+topic is some kind of data that you can lose
+
+action interface is separated into
+
+- request
+- reseult
+- feedback
+
+after creating action just like service and topic add path to CMakeLists.txt file
+
+add dependency inside the package.xml
+
+```xml
+<!-- dependency for action messages -->
+<depend>action_msgs</depend>
+```
+
+when doing show interface you pass type which is path
+
+```sh
+# to check services type
+service list -t
+```
+
+### Send Goal
+
+```sh
+ros2 action send_goal /{action-name} {path-to-action} "{values-for-interface}"
+
+# for feedback
+ros2 action send_goal --feedback /{action-name} {path-to-action} "{values-for-interface}"
+```
+
+### Multi-Thread
+
+subscriber does not work with action running
+
+add both pub and sub to multithreadexecutor: `my_multi_thread.py`
+
 ---
 
 ## Running
