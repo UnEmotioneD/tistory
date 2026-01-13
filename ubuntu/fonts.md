@@ -2,9 +2,10 @@
 
 - [x] fonts-noto-cjk
 - [x] fonts-nanum
-- [ ] D2Coding
+- [x] D2Coding
 - [ ] Fira Code
 - [ ] Hack
+- [ ] Iosevka
 - [x] Jetbrains
 - [x] Meslo
 
@@ -14,6 +15,16 @@
 
 ```sh
 sudo apt install fonst-noto-cjk fonts-nanum
+```
+
+---
+
+## With wget
+
+### D2Coding
+
+```sh
+wget https://github.com/naver/d2codingfont/releases/download/VER1.3.2/D2Coding-Ver1.3.2-20180524.zip
 ```
 
 ---
@@ -80,6 +91,8 @@ fc-list : family | grep Iosevka
 My favorite font
 
 ```toml
+D2Coding ligature
+
 MesloLGS Nerd Fonts
 
 JetBrainsMono Nerd Font
