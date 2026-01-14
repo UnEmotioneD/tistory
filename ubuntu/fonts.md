@@ -1,103 +1,69 @@
 # Fonts
 
-- [x] fonts-noto-cjk
-- [x] fonts-nanum
-- [x] D2Coding
-- [ ] Fira Code
-- [ ] Hack
-- [ ] Iosevka
-- [x] Jetbrains
-- [x] Meslo
+Download and use fonts from online
 
 ---
 
-## With APT
+## APT
 
 ```sh
-sudo apt install fonst-noto-cjk fonts-nanum
+sudo apt install fonts-nanum fonst-noto-cjk
 ```
 
 ---
 
-## With wget
+## Manually
 
-### D2Coding
+### Create Directory
 
-```sh
-wget https://github.com/naver/d2codingfont/releases/download/VER1.3.2/D2Coding-Ver1.3.2-20180524.zip
-```
-
----
-
-## With Git
-
-### Create Dir
-
-Create dedicated directory for fonts
-
-`cd` into it
+Create directory where to download fonts:
 
 ```sh
 mkdir -p ~/.local/share/fonts
-cd ~/.local/share/fonts
 ```
 
----
+### Download
 
-### Install
-
-Install `Meslo` with `wget`
-
-Remove `.zip` file after unzip
-
-- Meslo Nerd Fonts
+Download from [`nerdfonts.com`](https://nerdfonts.com) or with `wget` and unzip
 
 ```sh
 wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Meslo.zip
 unzip Meslo.zip
-rm Melso.zip
 ```
 
-- JetBrains
+### Fonts Cache
 
-```sh
-wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
-unzip JetBrainsMono.zip
-rm JetBrainsMono.zip
-```
+rebuild fonts cache:
 
----
-
-## Refresh Font Cache
+- `-f`(force): rebuild including already built
+- `-v`(verbose): show the outputs
 
 ```sh
 fc-cache -fv
 ```
 
-Check with grep
+or font cache for all users
+
+`/usr/local/share/fonts/`
+
+```sh
+sudo fc-cache
+```
+
+### List Installed Fonts
 
 ```sh
 fc-list | grep "MesloLGS Nerd Font"
 ```
 
-More cleaner
+More cleaner:
+
+- `-i`: ignore case
 
 ```sh
-fc-list : family | grep Iosevka
-```
-
-## Use
-
-My favorite font
-
-```toml
-D2Coding ligature
-
-MesloLGS Nerd Fonts
-
-JetBrainsMono Nerd Font
+fc-list : family | grep -i iosevkatermslab
 ```
 
 ---
 
-### Happy Hacking 🎉
+#### Happy Hacking 🎉
