@@ -103,6 +103,18 @@ tar xf lazygit.tar.gz lazygit
 sudo install lazygit -D -t /usr/local/bin/
 ```
 
+after install remove temp files
+
+```sh
+rm ~/lazygit ~/lazygit.tar.gz
+```
+
+to install remove lazygit at `/usr/local/bin` and run the install scripts again
+
+```sh
+sudo rm /usr/local/bin/lazygit
+```
+
 ---
 
 ## TMUX
