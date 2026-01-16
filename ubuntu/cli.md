@@ -16,14 +16,15 @@
 - [delta](#delta)
 - [fastfetch](#fastfetch)
 - [speedtest-cli](#speedtest-cli)
-- [pavucontrol](#pavucontrol)
+- pavucontrol
+- speedtest-cli
 
 ---
 
 APT installable packages
 
 ```sh
-sudo apt install git curl stow tmux bat eza zoxide git-delta
+sudo apt install git curl stow tmux bat eza zoxide git-delta pavucontrol speedtest-cli
 ```
 
 ---
@@ -205,6 +206,8 @@ add the following to `~/.gitconfig` customize `delta`
 
 ## Fastfetch
 
+System info fetch program
+
 ### Install with PPA
 
 ```sh
@@ -225,18 +228,7 @@ sudo add-apt-repository --remove ppa:zhangsongcui3371/fastfetch
 ## Speedtest-cli
 
 ```sh
-sudo apt install speedtest-cli
 speedtest --secure
-```
-
----
-
-## Pavucontrol
-
-manage audio with gui
-
-```sh
-sudo apt install pavucontrol
 ```
 
 ---
