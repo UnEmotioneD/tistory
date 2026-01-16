@@ -190,14 +190,13 @@ add the following to `~/.gitconfig` customize `delta`
 [interactive]
   diffFilter = delta --color-only
 [delta]
-  navigate = true ; use n / N to move between diff sections
-  dark = true
-  ; light = true
+  # use n / N to move between diff sections
+  navigate = true
   side-by-side = true
   line-numbers = true
   syntax-theme = GitHub
 [merge]
-  conflictstyle = zdiff3 ; or diff3
+  conflictstyle = zdiff3
 [diff]
   colorMoved = default
 ```
