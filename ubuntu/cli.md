@@ -13,6 +13,7 @@
 - [zoxide](#zoxide)
 - [yazi](#yazi)
 - [lazygit](#lazygit)
+- [delta](#delta)
 - [fastfetch](#fastfetch)
 - [speedtest-cli](#speedtest-cli)
 - [pavucontrol](#pavucontrol)
@@ -22,7 +23,7 @@
 APT installable packages
 
 ```sh
-sudo apt install git curl stow tmux bat eza zoxide
+sudo apt install git curl stow tmux bat eza zoxide git-delta
 ```
 
 ---
@@ -175,6 +176,30 @@ sudo rm /usr/local/bin/yazi /us/local/bin/ya
 ```
 
 Then remove the cloned repo
+
+---
+
+## Delta
+
+[delta / GitHub](https://github.com/dandavison/delta)
+
+add the following to `~/.gitconfig` customize `delta`
+
+```gitconfig
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true ; use n / N to move between diff sections
+  dark = true
+  ; light = true
+  side-by-side = true
+  line-numbers = true
+  syntax-theme = GitHub
+[merge]
+  conflictstyle = zdiff3 ; or diff3
+[diff]
+  colorMoved = default
+```
 
 ---
 
