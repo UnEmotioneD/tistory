@@ -172,7 +172,7 @@ sudo mv target/release/yazi target/release/ya /usr/local/bin/
 Remove the `yazi` and `ya` files under the `$PATH`
 
 ```sh
-sudo rm /usr/local/bin/yazi /us/local/bin/ya
+sudo rm /usr/local/bin/yazi /usr/local/bin/ya
 ```
 
 Then remove the cloned repo
