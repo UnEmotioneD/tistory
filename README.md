@@ -98,6 +98,26 @@ force push to github
 git push -f origin main
 ```
 
+## Git Config
+
+run the following commands inside terminal
+
+```sh
+git config --global user.name "UnEmotioneD"
+git config --global user.email "blackeagle10@icloud.com"
+git config --global core.editor "nvim" # optional
+```
+
+inside `~/.gitconfig`
+
+```gitconfig
+[user]
+	name = UnEmotioneD
+	email = blackeagle10@icloud.com
+[core]
+	editor = nvim
+```
+
 ---
 
 ### Happy Hacking 🎉
