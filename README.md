@@ -112,10 +112,10 @@ inside `~/.gitconfig`
 
 ```gitconfig
 [user]
-	name = UnEmotioneD
-	email = blackeagle10@icloud.com
+  name = UnEmotioneD
+  email = blackeagle10@icloud.com
 [core]
-	editor = nvim
+  editor = nvim
 ```
 
 ---
