@@ -90,6 +90,27 @@ Now you're done
 
 - You can get notifications from arch wiki
 
+## Yay Upgrade
+
+What is `cleanBuild` and `diffs to show`
+
+### Clean Build
+
+Delete old build files rebuild from scratch.
+Prevents issues by leftover fies or outdated librariesa.
+
+### Diffs to Show
+
+Show changes in PKGBULID before building AUR packages.
+For `security` and `transparency`
+
+You can review:
+
+- new or removed commands
+- changes in dependencies
+
+> Tips: For normal use just choose `None` for both
+
 ---
 
-### Happy Hacking 🎉
+#### Happy Hacking 🎉
