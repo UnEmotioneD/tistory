@@ -187,6 +187,8 @@ Then remove the cloned repo
 add the following to `~/.gitconfig` customize `delta`
 
 ```gitconfig
+[core]
+  pager = delta
 [interactive]
   diffFilter = delta --color-only
 [delta]
