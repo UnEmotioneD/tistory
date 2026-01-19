@@ -117,6 +117,19 @@ to install remove lazygit at `/usr/local/bin` and run the install scripts again
 sudo rm /usr/local/bin/lazygit
 ```
 
+### Config
+
+If you keep config file at `~/.config/lazygit/config.yml` and fill it in with
+default config it will freeze when you try to open file inside `lazygit`
+
+Add or edit as follow:
+
+```yml
+os:
+  edit: "nvim {{filename}}"
+  editAtLine: "nvim +{{line}} {{filename}}"
+```
+
 ---
 
 ## TMUX
