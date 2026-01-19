@@ -80,6 +80,12 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 ```
 
+Install `fdfind`(fd) to use with `Fzf`
+
+```sh
+sudo apt install fdfind
+```
+
 ### [FZF-git](https://github.com/junegunn/fzf-git.sh?tab=readme-ov-file)
 
 Used by `nvim` but sourced from `~/.zshrc`
