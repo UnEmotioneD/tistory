@@ -127,7 +127,6 @@ Add or edit as follow:
 ```yml
 os:
   edit: "nvim {{filename}}"
-  editAtLine: "nvim +{{line}} {{filename}}"
 ```
 
 ---
