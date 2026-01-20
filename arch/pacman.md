@@ -2,10 +2,15 @@
 
 How to use pacman
 
+---
+
+## List of Contents
+
 - [Install](#install)
 - [Update](#update)
 - [Remove](#remove)
   - [Remove orphaned](#remove-orphaned)
+  - [Remove Dependencies](#remove-dependencies)
 - [Search](#search)
   - [From Installed](#from-installed)
   - [From Online](#from-online)
@@ -71,6 +76,29 @@ remove every orphaned
 
 ```sh
 sudo pacman -Rns $(pacman -Qtdq)
+```
+
+### Remove Dependencies
+
+See what package depends on it
+
+```sh
+pacman -Qi {pkg-name}
+```
+
+More cleaner way:
+
+```sh
+pacman -r {pkg-name}
+```
+
+Skip dependency check
+
+`-d`: Skip dependency check
+`-dd`: Skip all dependency check
+
+```sh
+sudo pacman -Rdd {pkg-name}
 ```
 
 ---
