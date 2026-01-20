@@ -5,6 +5,15 @@ feature such as cursor trail here is how to install the latest version
 
 [kitty install](https://sw.kovidgoyal.net/kitty/binary/)
 
+## List of Contents
+
+- [Install Binary](#install-binary)
+  - [Update](#update)
+- [Desktop Integration](#desktop-integration)
+- [i3wm keybind](#i3wm-keybind)
+- [Config](#config)
+- [Remove](#remove)
+
 ---
 
 ## Use Bin PATH
@@ -72,4 +81,47 @@ bindsym $mod+Return exec --no-startup-id ~/.local/kitty.app/bin/kitty --title "K
 
 ---
 
-### Happy Hacking 🎉
+## Config
+
+- [kitty.conf](https://sw.kovidgoyal.net/kitty/conf/)
+
+Reload kitty config with `Ctrl + Shift + F5`
+
+---
+
+## Remove
+
+### Binary
+
+```sh
+rm -rf ~/.local/kitty.app
+```
+
+### Symlinks
+
+```sh
+rm -f ~/.local/bin/kitty ~/.local/bin/kitten
+```
+
+### Desktop Files
+
+```sh
+rm -f ~/.local/share/applications/kitty.desktop
+rm -f ~/.local/share/applications/kitty-open.desktop
+```
+
+### Undo Terminal Preference
+
+```sh
+rm -f ~/.config/xdg-terminals.list
+```
+
+### Confirm Revomal
+
+```sh
+which kitty
+```
+
+---
+
+#### Happy Hacking 🎉
