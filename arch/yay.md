@@ -2,8 +2,18 @@
 
 [DenshiVideo](https://www.youtube.com/watch?v=NzNuFN9hqjI)
 
-- yay(wrapper for pacman) packagemanager
-- which supports AUR(Arch User Repository)
+- `yay`(wrapper for pacman) packagemanager
+- Which supports `AUR`(Arch User Repository)
+
+## List of Content
+
+- [Prerequisite](#prerequisite)
+- [Download, Build and Install](#download-build-and-install)
+- [Update Yay](#update-yay)
+- [Yay Upgrade](#yay-upgrade)
+- [Whay do yay or paru do](#what-does-yay-or-paru-do)
+
+---
 
 ## Prerequisite
 
@@ -14,6 +24,8 @@ sudo pacman -S git
 ```
 
 Now clone the yay repository
+
+---
 
 ## Download, build and install
 
@@ -38,6 +50,56 @@ yay
 ```
 
 To check if it is working and also to update the `yay` package manager
+
+### Simpler way
+
+- flag `s` will download all the dependencies from pacman
+- flag `i` will automatically install it with pacman
+
+```sh
+makepkg -si
+```
+
+Now you're done
+
+### Downside
+
+- Cannot update it with pacman or aur helpers
+
+- To update it you have to pull it from source
+
+- You can get notifications from arch wiki
+
+---
+
+## Update Yay
+
+```sh
+yay -S yay
+```
+
+---
+
+## Yay Upgrade
+
+What is `cleanBuild` and `diffs to show`
+
+### Clean Build
+
+Delete old build files rebuild from scratch.
+Prevents issues by leftover fies or outdated librariesa.
+
+### Diffs to Show
+
+Show changes in PKGBULID before building AUR packages.
+For `security` and `transparency`
+
+You can review:
+
+- new or removed commands
+- changes in dependencies
+
+> Tips: For normal use just choose `None` for both
 
 ---
 
@@ -71,46 +133,6 @@ to uninstall the package build from source locally you have to do
 sudo pacman -Rs pfetch
 ```
 
-### Simpler way
-
-- flag `s` will download all the dependencies from pacman
-- flag `i` will automatically install it with pacman
-
-```sh
-makepkg -si
-```
-
-Now you're done
-
-### Downside
-
-- Cannot update it with pacman or aur helpers
-
-- To update it you have to pull it from source
-
-- You can get notifications from arch wiki
-
-## Yay Upgrade
-
-What is `cleanBuild` and `diffs to show`
-
-### Clean Build
-
-Delete old build files rebuild from scratch.
-Prevents issues by leftover fies or outdated librariesa.
-
-### Diffs to Show
-
-Show changes in PKGBULID before building AUR packages.
-For `security` and `transparency`
-
-You can review:
-
-- new or removed commands
-- changes in dependencies
-
-> Tips: For normal use just choose `None` for both
-
 ---
 
-#### Happy Hacking 🎉
+### Happy Hacking 🎉
