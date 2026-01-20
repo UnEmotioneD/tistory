@@ -12,7 +12,7 @@ feature such as cursor trail here is how to install the latest version
 make sure you have the following line inside `~/.zshrc`:
 
 ```sh
-export PATH="$HOME/.loca/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 ```
 
 ---
@@ -67,7 +67,7 @@ echo 'kitty.desktop' > ~/.config/xdg-terminals.list
 Launch `kitty` with title option
 
 ```sh
-bindsym $mod+Return exec --no-startup-id kitty --title "Kitty"
+bindsym $mod+Return exec --no-startup-id ~/.local/kitty.app/bin/kitty --title "Kitty"
 ```
 
 ---
