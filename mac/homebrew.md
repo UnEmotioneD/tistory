@@ -12,7 +12,7 @@
 
 execute following command in terminal
 
-```bash
+```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
@@ -27,7 +27,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 - intell cpu mac:
 
-```bash
+```sh
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/unemotioned/.zprofile
 eval "$(/usr/local/bin/brew shellenv)"
 ```
@@ -36,7 +36,7 @@ or copy it from the installation prompt
 
 check if installed
 
-```bash
+```sh
 brew --version
 ```
 
@@ -44,31 +44,31 @@ brew --version
 
 search for packages
 
-```bash
+```sh
 brew search {pkg}
 ```
 
 list installed
 
-```bash
+```sh
 brew list
 ```
 
 you can pipe with grep
 
-```bash
+```sh
 brew list | grep {pkg}
 ```
 
 install cli package
 
-```bash
+```sh
 brew install {pkg}
 ```
 
 install desktop application
 
-```bash
+```sh
 brew install --cask {pkg}
 ```
 
@@ -76,44 +76,44 @@ remove packages
 
 or with `--cask` to remove desktop app
 
-```bash
+```sh
 brew uninstall {pkg}
 ```
 
 update homebrew itself
 
-```bash
+```sh
 brew update
 ```
 
 update homebrew installed outdated packages installed
 
-```bash
+```sh
 brew upgrade
 brew upgrade --cask
 ```
 
 remove orphaned packages
 
-```bash
+```sh
 brew autoremove
 ```
 
 show orphaned packages before actually removing
 
-```bash
+```sh
 brew autoremove --dry-run
 ```
 
 clear cache
 
-```bash
+```sh
 brew clean
 ```
 
 check homebrew health
 
-```bash
+```sh
 brew doctor
 ```
 
@@ -121,18 +121,24 @@ brew doctor
 
 keep the `brew upgrade` from updating the package
 
-```bash
+```sh
 brew pin openjdk@17
 ```
 
 show the pinned packages with `--pinned` flag
 
-```bash
+```sh
 brew list --pinned
 ```
 
 or list outdated packages before `upgrade`
 
-```bash
+```sh
 brew outdated
+```
+
+### Unping Package
+
+```sh
+brew unpin openjdk@17
 ```
