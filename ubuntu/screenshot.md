@@ -1,6 +1,6 @@
 # Flameshot
 
-[flameshot - command line option](https://flameshot.org/docs/advanced/commandline-options/)
+[Flameshot - command line option](https://flameshot.org/docs/advanced/commandline-options/)
 
 ---
 
@@ -12,15 +12,15 @@ sudo apt install flameshot
 
 ## Keybind with i3
 
-keybind: Alt + Shift + j, k, l
+Example keybind: Alt + Shift + j, k, l
 
 - `gui` : select to capture
-- `screen` : whole screen
-- `full` : every thing on monitor
+- `screen` : single screen
+- `full` : entire monitor
 
-- copy to clipboard and save to path
+Copy to clipboard and save to path
 
-```i3config
+```conf
 bindsym Mod1+shift+j exec --no-startup-id flameshot gui    --clipboard --path ~/Pictures/screenshots
 bindsym Mod1+shift+k exec --no-startup-id flameshot screen --clipboard --path ~/Pictures/screenshots
 bindsym Mod1+shift+l exec --no-startup-id flameshot full   --clipboard --path ~/Pictures/screenshots
@@ -28,4 +28,4 @@ bindsym Mod1+shift+l exec --no-startup-id flameshot full   --clipboard --path ~/
 
 ---
 
-## Happy Hacking 🎉
+### Happy Hacking 🎉
