@@ -28,7 +28,8 @@ Download from [`nerdfonts.com`](https://nerdfonts.com) or with `wget` and unzip
 
 ```sh
 wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Meslo.zip
-unzip Meslo.zip
+mkdir ~/.local/share/fonts/Meslo # make directory for fonts
+unzip Meslo.zip -d ~/.lcoal/share/fonts/Meslo # unzip into directory
 ```
 
 ### Fonts Cache
