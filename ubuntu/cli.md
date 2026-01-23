@@ -180,6 +180,26 @@ and move `yazi`, `ya` files to `$PATH`
 sudo mv target/release/yazi target/release/ya /usr/local/bin/
 ```
 
+### Yazi Theme
+
+Add tokyonight theme with yazi package manager `ya`:
+
+```sh
+ya pkg add BennyOe/tokyo-night
+```
+
+This will create `flavors/` under yazi config directory,
+you only need `flavors.toml` and `tmtheme.xml` files
+
+Under the `~/.config/yazi` add `theme.toml` file, inside:
+
+```toml
+[flavor]
+use = "tokyo-night"
+# For Yazi 0.4 and above
+dark = "tokyo-night"
+```
+
 ### Uninstall Yazi
 
 Remove the `yazi` and `ya` files under the `$PATH`
