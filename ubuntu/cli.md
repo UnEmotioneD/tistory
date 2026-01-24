@@ -200,6 +200,13 @@ use = "tokyo-night"
 dark = "tokyo-night"
 ```
 
+### Update
+
+1. pull latest update
+2. update `cargo`
+3. build with `cargo`
+4. move `yazi` and `ya` to `$PATH`
+
 ### Uninstall Yazi
 
 Remove the `yazi` and `ya` files under the `$PATH`
