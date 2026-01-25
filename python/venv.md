@@ -70,6 +70,18 @@ pip install --upgrade requests
 pip freeze > requirements.txt
 ```
 
+## Update
+
+Update every modules inside venv
+
+1. find outdated modules in freeze format
+2. get the name only
+3. update each one
+
+```sh
+pip list --outdated --format=freeze | cut -d= -f1 | xargs pip install -U
+```
+
 ---
 
 ### Happy Hacking 🎉
