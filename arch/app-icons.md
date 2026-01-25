@@ -17,7 +17,7 @@ mkdir -p ~/.local/share/applications
 Copy Desktop File
 
 ```sh
-cp /usr/share/applications/kitty.desktopa ~/.local/share/applications/
+cp /usr/share/applications/kitty.desktop ~/.local/share/applications
 ```
 
 ---
