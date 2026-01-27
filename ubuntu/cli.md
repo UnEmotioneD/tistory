@@ -94,9 +94,11 @@ eval "$(zoxide init --cmd cd zsh)"
 
 ## Lazygit
 
-- [lazygit github/install ubuntu](https://github.com/jesseduffield/lazygit?tab=readme-ov-file#debian-and-ubuntu)
+Git TUI(Terminal User Interface) wrapper
 
-git wrapped in tui
+[lazygit github/install ubuntu](https://github.com/jesseduffield/lazygit?tab=readme-ov-file#debian-and-ubuntu)
+
+Run the following command in terminal to install:
 
 ```bash
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*')
@@ -105,13 +107,15 @@ tar xf lazygit.tar.gz lazygit
 sudo install lazygit -D -t /usr/local/bin/
 ```
 
-after install remove temp files
+After install remove temp files:
 
 ```sh
 rm ~/lazygit ~/lazygit.tar.gz
 ```
 
-to install remove lazygit at `/usr/local/bin` and run the install scripts again
+### Update
+
+To update remove lazygit at `/usr/local/bin` and run the install scripts again
 
 ```sh
 sudo rm /usr/local/bin/lazygit
